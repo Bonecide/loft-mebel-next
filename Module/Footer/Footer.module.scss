@@ -1,0 +1,65 @@
+.footer {
+    padding: 54px 128px 38px 140px;
+    box-shadow: 0px -4px 10px 0px #00000008;
+    display: flex;
+    justify-content: space-between;
+    h2 {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    ul {
+        display: flex;
+        flex-direction:column ;
+        gap: 7px;
+        li {
+            font-size: 14px;
+            color: #414141;
+            cursor: pointer;
+        }
+    }
+    .lists {
+        display: flex;
+        gap: 50px;
+        margin-top: 10px;
+    }
+    .special {
+        display: flex;
+        gap: 30px;
+        margin-top: 34px;
+        p {
+            font-size: 14px;
+            color: #414141;
+        }
+        .discount {
+            color: #D74444;
+        }
+    }
+    .second_column {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        
+        img {
+            width: 60px;
+            height: 49px;
+        }
+        .address {
+            p {
+                text-align: end;
+            }
+        }
+    }
+    .contacts {
+        display: flex;
+        gap: 30px;
+        margin-top: 34px;
+        img {
+            width: 15px;
+            height: 15px;
+        }
+        div {
+            display: flex;
+            gap: 7px;
+        }
+    }
+}

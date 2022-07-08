@@ -1,0 +1,55 @@
+.container {
+    box-shadow: 0px 2px 4px 0px #00000012;
+    display: flex;
+    margin-top: 49px;
+    .Card {
+        padding: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 142px;
+        height: 70px;
+        transition: all 0.3s;
+        p{
+            color: #D74444;
+            cursor: pointer;
+        }
+        
+    }
+    .etc {
+        padding: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       position: relative;
+        height: 70px;
+        transition: all 0.3s;
+        p {
+            color: #414141;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    }
+    .menu_list {
+        box-shadow: 0px 2px 4px 0px #00000012;
+        width: 190px;
+        transition: all 0.3s;
+        position: absolute;
+        z-index: 9999;
+        background-color: white;
+        bottom: -250px;
+        div {
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p {
+                cursor: pointer;
+                font-size: 14px;
+                &:hover {
+                    color: #245462;
+                }
+            }
+        }
+    }
+}
