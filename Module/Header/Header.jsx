@@ -11,9 +11,9 @@ export default function Header() {
                         <Image height={25} width= {113} src={'/img/LOGO.svg'} layout="raw" alt= 'logo'/>
                     </div>
                     <div className={s.navigation}>
-                        <a>Главная</a>
-                        <a>О нас</a>
-                        <a>Контакты</a>
+                        <Link href = {'/'} >Главная</Link>
+                        <Link href = {'/'} >О нас</Link>
+                        <Link href = {'/contacts'} >Контакты</Link>
                     </div>
                     <div>
                         <input placeholder="Поиск" className={s.input} type="text"  />

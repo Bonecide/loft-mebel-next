@@ -1,4 +1,5 @@
 import Slick from "react-slick";
+import SecondCard from "../../Module/SliderCard/SecondCard/SecondCard";
 import SliderCard from "../../Module/SliderCard/SliderCard";
 import s from './Slider.module.scss'
 export default function Slider(){
@@ -28,7 +29,7 @@ export default function Slider(){
       />
             <Slick {...settings} className={s.Slider}>
                 <SliderCard/>
-                <SliderCard/>
+                <SecondCard/>
             </Slick>
         </div>
     )

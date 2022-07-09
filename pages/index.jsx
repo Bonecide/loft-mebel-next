@@ -7,7 +7,7 @@ import Outlet from './../Components/Outlet/Outlet';
 export default function MainPage() {
 
     return(
-        <Outlet>
+        <Outlet title={'Главная'}>
            <Slider/>
            <Hits/>
         </Outlet>
