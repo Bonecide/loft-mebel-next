@@ -16,3 +16,17 @@ ul {
 p,h1,h2,h3,h4,h5 {
     color: #414141;
 }
+.slick-next:before {
+    color: #414141 !important;
+    position: absolute;
+    left: -160px;
+}
+.slick-prev:before {
+    color: #414141 !important;
+    position: absolute;
+    right: -50px;
+    z-index: 9999;
+}
+.slick-prev {
+    z-index: 9999;
+}

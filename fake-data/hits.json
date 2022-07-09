@@ -1,0 +1,160 @@
+[
+    {
+        "name" : "Валенсия Beige",
+        "type" : "Барные стулья",
+        "newPrice" : "2 300₽",
+        "img" : "/img/chair.svg",
+        "size" : [
+            {
+                "width" : "43 СМ", 
+                "deep" : "43 СМ",
+                "height" : "77 СМ"
+            }
+        ]
+    },
+    {
+        "name" : "Толикс-2 White Gloss",
+        "type" : "Барные стулья",
+        "newPrice" : "2 300₽",
+        "img" : "/img/white-chair.svg",
+        "size" : [
+            {
+                "width" : "43 СМ", 
+                "deep" : "43 СМ",
+                "height" : "77 СМ"
+            }
+        ]
+    },
+    {
+        "name" : "Динс Velvet Yellow",
+        "type" : "Диваны",
+        "oldPrice" : "37 990₽",
+        "Discount" : "-25%",
+        "newPrice" : "28 490₽",
+        "img" : "/img/couch.svg",
+        "size" : [
+            {
+                "width" : "1 М", 
+                "deep" : "70 СМ",
+                "height" : "77 СМ"
+            }
+        ]
+    },
+    {
+        "name" : "Кускен Navy Blue",
+        "type" : "Диваны",
+        "newPrice" : "2 300₽",
+        "img" : "/img/blue-couch.svg",
+        "size" : [
+            {
+                "width" : "1 М", 
+                "deep" : "70 СМ",
+                "height" : "77 СМ"
+            }
+        ]
+    },
+    {
+        "name" : "Шерона Barhat Grey",
+        "type" : "Двухспальные кровати",
+        "newPrice" : "21 990₽",
+        "img" : "/img/bed.svg",
+        "size" : [
+            {
+                "width" : "1 М", 
+                "deep" : "250 СМ",
+                "height" : "70 СМ"
+            }
+        ]
+    },
+    {
+        "name" : "Авиньон-1",
+        "type" : "Буфеты",
+        "newPrice" : "18 990₽",
+        "img" : "/img/buffet.svg",
+        "size" : [
+            {
+                "width" : "43 СМ", 
+                "deep" : "70 СМ",
+                "height" : "190 СМ"
+            }
+        ]
+    },
+    {
+        "name" : "Стелла Дуб Сонома",
+        "type" : "Комоды",
+        "newPrice" : "8 990₽",
+        "img" : "/img/chest.svg",
+        "size" : [
+            {
+                "width" : "43 СМ", 
+                "deep" : "43 СМ",
+                "height" : "77 СМ"
+            }
+        ]
+    },
+    {
+        "name" : "Равенна-1 Light",
+        "type" : "Комоды",
+        "newPrice" : "14 990₽",
+        "img" : "/img/chest2.svg",
+        "size" : [
+            {
+                "width" : "43 СМ", 
+                "deep" : "43 СМ",
+                "height" : "77 СМ"
+            }
+        ]
+    },
+    {
+        "name" : "Валенсия Beige",
+        "type" : "Барные стулья",
+        "newPrice" : "2 300₽",
+        "img" : "/img/chair.svg",
+        "size" : [
+            {
+                "width" : "43 СМ", 
+                "deep" : "43 СМ",
+                "height" : "77 СМ"
+            }
+        ]
+    },
+    {
+        "name" : "Валенсия Beige",
+        "type" : "Барные стулья",
+        "newPrice" : "2 300₽",
+        "img" : "/img/chair.svg",
+        "size" : [
+            {
+                "width" : "43 СМ", 
+                "deep" : "43 СМ",
+                "height" : "77 СМ"
+            }
+        ]
+    },
+    {
+        "name" : "Валенсия Beige",
+        "type" : "Барные стулья",
+        "newPrice" : "2 300₽",
+        "img" : "/img/chair.svg",
+        "size" : [
+            {
+                "width" : "43 СМ", 
+                "deep" : "43 СМ",
+                "height" : "77 СМ"
+            }
+        ]
+    },
+    {
+        "name" : "Валенсия Beige",
+        "type" : "Барные стулья",
+        "newPrice" : "2 300₽",
+        "img" : "/img/chair.svg",
+        "size" : [
+            {
+                "width" : "43 СМ", 
+                "deep" : "43 СМ",
+                "height" : "77 СМ"
+            }
+        ]
+    }
+]

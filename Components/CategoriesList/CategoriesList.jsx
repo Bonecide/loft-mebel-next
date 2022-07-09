@@ -2,7 +2,8 @@ import CategoriesCard from '../CategoriesCard/CategoriesCard'
 import s from './CategoriesList.module.scss'
 import CardInfo from '/fake-data/furniture-type.json'
 import { useState } from 'react';
-export default function CategoriesList({isView,setIsView}) {
+export default function CategoriesList() {
+    const [isView, setIsView] = useState(false)
     return(
         <div>
             <div className={s.container}>
