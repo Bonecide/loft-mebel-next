@@ -29,7 +29,7 @@
         "name" : "Динс Velvet Yellow",
         "type" : "Диваны",
         "oldPrice" : "37 990₽",
-        "Discount" : "-25%",
+        "discount" : "-25%",
         "newPrice" : "28 490₽",
         "img" : "/img/couch.svg",
         "size" : [

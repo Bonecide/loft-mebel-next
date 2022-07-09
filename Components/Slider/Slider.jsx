@@ -5,11 +5,13 @@ export default function Slider(){
     
     const settings = {
         infinite: true,
-        speed: 400,
+        speed: 900,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed : 1000
+        autoplaySpeed : 5000,
+        fade: true,
+
       };
     return(
         <div>

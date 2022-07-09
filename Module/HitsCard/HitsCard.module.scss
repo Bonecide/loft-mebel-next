@@ -9,7 +9,7 @@
     width: 263px;
    height: 378px;
    overflow: hidden;
-   transition: all 0.3s;
+   transition: all 0.5s;
    background: white;
     &:hover  {
         .hidden {
@@ -24,10 +24,22 @@
          top: 0;
 
     }
-    .heart_container {
+    .icon_container {
+        display: flex;
+        justify-content: space-between;
         text-align: end;
+        
         .heart {
             cursor: pointer;
+        }
+        .discount {
+            display: flex;
+            gap: 7px;
+            img {
+                width: 17px;
+                height: 17px;
+                margin-top: 0;
+            }
         }
     }
     img {
@@ -54,6 +66,17 @@
         }
         p {
             font-size: 12px;
+        }
+        .prices {
+            display:flex;
+            gap: 6px;
+            h5 {
+                font-size: 12px;
+                color:#CCCCCC;
+                text-decoration-line: line-through;
+                font-weight: 500;
+            }
+            
         }
     }
     .sizes {
