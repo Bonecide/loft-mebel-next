@@ -2,14 +2,14 @@
 import Hits from '../Components/Hits/Hits';
 import Slider from '../Components/Slider/Slider';
 import HitsCard from '../Module/HitsCard/HitsCard';
-import Outlet from './../Components/Outlet/Outlet';
+import Layout from './../Components/Layout/Layout';
 
 export default function MainPage() {
 
     return(
-        <Outlet title={'Главная'}>
+        <Layout title={'Главная'}>
            <Slider/>
            <Hits/>
-        </Outlet>
+        </Layout>
     )
 }

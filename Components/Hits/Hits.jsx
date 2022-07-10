@@ -11,7 +11,7 @@ export default function Hits() {
         <div className={s.container}>
             
             {information.map((info,idx) => (
-                <HitsCard key ={`HitN${idx}`}
+                <HitsCard key ={`HitN${idx + 1}`}
                 name={info.name}
                 type={info.type}
                 oldPrice={info.oldPrice}
@@ -19,7 +19,7 @@ export default function Hits() {
                 img={info.img}
                 discount={info.discount}
                 size={info.size}
-                
+                info={info}
                 />
             ))}
         </div>

@@ -2,8 +2,8 @@
 import  Head  from "next/head";
 import Footer from "../../Module/Footer/Footer";
 import Header from "../../Module/Header/Header";
-import s from './Outlet.module.scss'
-export default function Outlet({children,title , ...props}) {
+import s from './Layout.module.scss'
+export default function Layout({children,title , ...props}) {
 
     return(
      <>

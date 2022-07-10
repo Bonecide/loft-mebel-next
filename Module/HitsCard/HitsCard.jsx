@@ -1,8 +1,21 @@
 import IMG from '../../Components/IMG/IMG'
 import s from './HitsCard.module.scss'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img}) {
-
+import { useDispatch } from 'react-redux';
+import { AddBasket } from '../../store/Slices/basketSlice';
+export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,info}) {
+    const good = {
+        name ,
+        newPrice,
+        img,
+        oldPrice,
+        discount,
+        size,
+    }
+    const dispatch = useDispatch()
+    const addInBasket = () => {
+        dispatch(AddBasket(good))   
+    } 
     return(
 
         <div className={s.relative}>
@@ -50,7 +63,7 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img}
                                 </div></>
                         ))}
                     </div>
-                    <button>Добавить в корзину</button>
+                    <button onClick={addInBasket}>Добавить в корзину</button>
                 </div>
             </div>
         </div>  

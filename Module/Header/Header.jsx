@@ -8,7 +8,9 @@ export default function Header() {
         <header>
             <div className={s.header}>
                     <div>
-                        <Image height={25} width= {113} src={'/img/LOGO.svg'} layout="raw" alt= 'logo'/>
+                        <Link href = {'/'}>
+                        <Image height={25} className={s.logo} width= {113} src={'/img/LOGO.svg'} layout="raw" alt= 'logo'/>
+                        </Link>
                     </div>
                     <div className={s.navigation}>
                         <Link href = {'/'} >Главная</Link>
@@ -34,7 +36,7 @@ export default function Header() {
                                 <Image width={0} height={0} src={'/img/icons/wishlist-icon.svg'} alt='wishlist'/>
                             </a>
                         </Link>
-                        <Link href="">
+                        <Link href="/basket">
                             <a>
                                 <Image width={0} height={0} src={'/img/icons/bag.svg'} alt='bag'/>
                             </a>

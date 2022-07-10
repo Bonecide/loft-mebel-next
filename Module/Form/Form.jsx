@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import IMG from '../../Components/IMG/IMG'
 import s from './Form.module.scss'
 export default function Form(){
 
@@ -45,20 +46,23 @@ export default function Form(){
                     </div>
                 </form>  
             </div>
-            <div>
-                    <div>
+            <div className={s.secondBlock}>
+                    <div className={s.contact}>
                             <div>
-                                
+                                <IMG src={'/img/icons/phone.svg'} alt='phone'/>
+                                <p>8 (964) 89 99 119</p>
                             </div>
                             <div>
-
+                                <IMG src={'/img/icons/mail.svg'} alt='mail'/>
+                                <p>mebel_loft_anapa@mail.ru</p>
                             </div>
                             <div>
-
+                                <IMG src={'/img/icons/inst.svg'} alt='inst'/>
+                                <p>INSTAGRAM</p>
                             </div>
                     </div>
                     <div>
-
+                            <p>Адрес: г. Анапа, Анапское шоссе, 30 Ж/К Черное море</p>
                     </div>
             </div>
         </div>
