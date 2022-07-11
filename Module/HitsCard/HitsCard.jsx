@@ -3,6 +3,8 @@ import s from './HitsCard.module.scss'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useDispatch } from 'react-redux';
 import { AddBasket } from '../../store/Slices/basketSlice';
+import { increment } from '../../store/Slices/priceSlice'
+
 export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,info}) {
     const good = {
         name ,
@@ -14,8 +16,10 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,
     }
     const dispatch = useDispatch()
     const addInBasket = () => {
-        dispatch(AddBasket(good))   
+        dispatch(AddBasket(good))  
+        dispatch(increment(newPrice)) 
     } 
+
     return(
 
         <div className={s.relative}>
@@ -41,8 +45,9 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,
                     <h2>{name}</h2>
                     <h3>{type}</h3>
                    <div className={s.prices}>
-                    <h4>{newPrice}</h4>
-                    <h5>{oldPrice}</h5>
+                    <h4>{newPrice}₽</h4>
+                    {oldPrice &&  <h5>{oldPrice}₽</h5>}
+                    
                    </div>
 
                 </div>

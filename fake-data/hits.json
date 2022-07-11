@@ -2,7 +2,7 @@
     {
         "name" : "Валенсия Beige",
         "type" : "Барные стулья",
-        "newPrice" : "2 300₽",
+        "newPrice" : 2300,
         "img" : "/img/chair.svg",
         "size" : [
             {
@@ -15,7 +15,7 @@
     {
         "name" : "Толикс-2 White Gloss",
         "type" : "Барные стулья",
-        "newPrice" : "2 300₽",
+        "newPrice" : 2300,
         "img" : "/img/white-chair.svg",
         "size" : [
             {
@@ -28,9 +28,9 @@
     {
         "name" : "Динс Velvet Yellow",
         "type" : "Диваны",
-        "oldPrice" : "37 990₽",
+        "oldPrice" : 37990,
         "discount" : "-25%",
-        "newPrice" : "28 490₽",
+        "newPrice" : 28490,
         "img" : "/img/couch.svg",
         "size" : [
             {
@@ -43,7 +43,7 @@
     {
         "name" : "Кускен Navy Blue",
         "type" : "Диваны",
-        "newPrice" : "2 300₽",
+        "newPrice" : 2300,
         "img" : "/img/blue-couch.svg",
         "size" : [
             {
@@ -56,7 +56,7 @@
     {
         "name" : "Шерона Barhat Grey",
         "type" : "Двухспальные кровати",
-        "newPrice" : "21 990₽",
+        "newPrice" : 21990,
         "img" : "/img/bed.svg",
         "size" : [
             {
@@ -69,7 +69,7 @@
     {
         "name" : "Авиньон-1",
         "type" : "Буфеты",
-        "newPrice" : "18 990₽",
+        "newPrice" : 18990,
         "img" : "/img/buffet.svg",
         "size" : [
             {
@@ -82,7 +82,7 @@
     {
         "name" : "Стелла Дуб Сонома",
         "type" : "Комоды",
-        "newPrice" : "8 990₽",
+        "newPrice" : 8990,
         "img" : "/img/chest.svg",
         "size" : [
             {
@@ -95,7 +95,7 @@
     {
         "name" : "Равенна-1 Light",
         "type" : "Комоды",
-        "newPrice" : "14 990₽",
+        "newPrice" : 14990,
         "img" : "/img/chest2.svg",
         "size" : [
             {
@@ -108,7 +108,7 @@
     {
         "name" : "Валенсия Beige",
         "type" : "Барные стулья",
-        "newPrice" : "2 300₽",
+        "newPrice" : 2300,
         "img" : "/img/chair.svg",
         "size" : [
             {
@@ -121,7 +121,7 @@
     {
         "name" : "Валенсия Beige",
         "type" : "Барные стулья",
-        "newPrice" : "2 300₽",
+        "newPrice" : 2300,
         "img" : "/img/chair.svg",
         "size" : [
             {
@@ -134,7 +134,7 @@
     {
         "name" : "Валенсия Beige",
         "type" : "Барные стулья",
-        "newPrice" : "2 300₽",
+        "newPrice" : 2300,
         "img" : "/img/chair.svg",
         "size" : [
             {
@@ -147,7 +147,7 @@
     {
         "name" : "Валенсия Beige",
         "type" : "Барные стулья",
-        "newPrice" : "2 300₽",
+        "newPrice" : 2300,
         "img" : "/img/chair.svg",
         "size" : [
             {

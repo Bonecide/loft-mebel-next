@@ -1,1 +1,26 @@
 
+.quanity {
+    display:flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    h3 {
+        font-size: 16px;
+        font-weight: 400;
+    }
+   
+}
+.order {
+    display:flex;
+    gap:20px;
+    align-items:center;
+    justify-content : flex-end;
+    button {
+        padding : 13px 50px;
+        font-size : 13px;
+        color:white;
+        border:none;
+        background : #245462;
+        cursor:pointer;
+    }
+}

@@ -2,10 +2,16 @@ import IMG from "../../Components/IMG/IMG";
 import s from './BasketCard.module.scss'
 import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch } from 'react-redux';
-import { BasketDelete } from "../../store/Slices/basketSlice";
-export default function BasketCard({name,newPrice,img,basketdel,oldPrice,discount,size}) {
-    
+import { decrement } from '../../store/Slices/priceSlice'
+import { BasketDelete } from '../../store/Slices/basketSlice'
+export default function BasketCard({name,newPrice,img,oldPrice,discount,size,idx}) {
     const dispatch = useDispatch()
+
+    const basketdel = () => {
+        dispatch(BasketDelete(idx))
+        dispatch(decrement(newPrice))
+      }
+    
     return(
         <div>
             <div className={s.Card}>
@@ -22,8 +28,9 @@ export default function BasketCard({name,newPrice,img,basketdel,oldPrice,discoun
                            <p>{discount}</p>
                             </div>
                            }
-                        <p className={s.oldPrice}>{oldPrice}</p>
-                        <p>{newPrice}</p>
+                           {oldPrice && <p className={s.oldPrice}>{oldPrice}₽</p>}
+                        
+                        <p>{newPrice}₽</p>
                         </div>
                     </div>
                     <div className={s.type}>
