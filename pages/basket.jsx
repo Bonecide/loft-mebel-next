@@ -8,6 +8,7 @@ export default function Basket() {
     return(
 
         <Layout title={'Корзина'}>
+           <div className="container">
             <div className={s.crumb}>
                 <Link href={'/'}>
                     <a>Главная</a>
@@ -18,6 +19,7 @@ export default function Basket() {
             </Link>
            </div>
                 <BasketList/>
+            </div>     
          </Layout>   
     )
 }

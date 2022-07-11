@@ -9,6 +9,7 @@ export default function Contacts() {
     return(
 
         <Layout title={"Контакты"}>
+         <div className='container'>
            <div className={s.crumb}>
                 <Link href={'/'}>
                     <a>Главная</a>
@@ -21,6 +22,7 @@ export default function Contacts() {
            <h2 className={s.title}>Свяжитесь с нами</h2>
            <Form/>
            <Map/>
+           </div>     
         </Layout>
     )
 }

@@ -1,9 +1,9 @@
 import s from './Footer.module.scss'
 import IMG from './../../Components/IMG/IMG';
 export default function Footer() {
-
+    
     return(
-        <footer className={s.footer}>
+        <footer className={`container ${s.footer}`}>
                 <div>
                     <div>
                         <h2>НАВИГАЦИЯ</h2>

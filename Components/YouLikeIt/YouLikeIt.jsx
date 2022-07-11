@@ -26,18 +26,20 @@ export default function YouLikeIt() {
             <h2>Вам может понравиться</h2>
             <div className={s.CardContainer}>
                 {LikeIt? LikeIt.map((info,idx)=> (
-                        <HitsCard key ={`You'll like it${idx + 1}`}
-                        name={info.name}
-                        type={info.type}
-                        oldPrice={info.oldPrice}
-                        newPrice={info.newPrice}
-                        img={info.img}
-                        discount={info.discount}
-                        size={info.size}
-                        info={info}
-                        />
+                   info ?
+                   <HitsCard key ={`You'll like it${idx + 1}`}
+                   name={info.name}
+                   type={info.type}
+                   oldPrice={info.oldPrice}
+                   newPrice={info.newPrice}
+                   img={info.img}
+                   discount={info.discount}
+                   size={info.size}
+                   info={info}
+                   /> : null
+                        
                 )) : null}
-            </div>
+            </div>  
         </div>
     )
 }

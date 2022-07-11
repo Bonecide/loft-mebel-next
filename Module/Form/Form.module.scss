@@ -50,6 +50,7 @@
         font-size: 12px;
     }
     .inputs_container {
+        width: 60%;
         form{
         display: flex;
         flex-direction: column;
@@ -82,7 +83,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 23px;
-        width: 40%;
+        width: 60%;
         div {
             display: flex;
             gap: 10px;
@@ -96,7 +97,7 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
-        width: 65%;
+        width: 60%;
         p {
             color: #414141;
         }

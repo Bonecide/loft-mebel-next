@@ -1,0 +1,33 @@
+.advantages {
+    padding: 80px 0px 80px 0px;
+    width:100%;
+    background-color: #D7E8ED;
+    .container {
+        display:flex;
+        flex-direction:column;
+        gap:65px;
+        align-items : center;
+        text-align:center;
+        .Card {
+            display:flex;
+            flex-direction:column;
+            align-items: center;
+            gap:15px;
+            width: 41%;
+            h3 {
+                font-size: 18px;
+                font-weight: 400;
+            }
+            hr {
+                width:50px;
+                background : #245462;
+                height: 1px;
+            }
+            p {
+                font-size: 14px;
+                font-weight: 400;
+                color:#686868;
+            }
+        }
+    }
+}

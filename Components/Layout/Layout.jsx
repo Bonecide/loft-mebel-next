@@ -3,7 +3,7 @@ import  Head  from "next/head";
 import Footer from "../../Module/Footer/Footer";
 import Header from "../../Module/Header/Header";
 import s from './Layout.module.scss'
-export default function Layout({children,title , ...props}) {
+export default function Layout({children,title , without , ...props}) {
 
     return(
      <>
@@ -14,12 +14,12 @@ export default function Layout({children,title , ...props}) {
         </Head>
 
         <div {...props}> 
-            <div className={s.Wrap}>
-                <Header/>
+            
+                <Header without ={without}/>
                 <main >
                     {children}
                 </main>
-            </div>    
+              
                 <Footer/>
         
         </div>  

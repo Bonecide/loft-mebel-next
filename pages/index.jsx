@@ -8,8 +8,10 @@ export default function MainPage() {
 
     return(
         <Layout title={'Главная'}>
+          <div className='container'>
            <Slider/>
            <Hits/>
+           </div>    
         </Layout>
     )
 }

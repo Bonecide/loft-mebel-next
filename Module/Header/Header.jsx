@@ -2,10 +2,21 @@ import Image from "next/future/image";
 import Link from "next/link";
 import s from './Header.module.scss'
 import CategoriesList from './../../Components/CategoriesList/CategoriesList';
-export default function Header() {
-
+import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+export default function Header({without}) {
+    const item = useSelector((state) => state.basket);
+    const [isFully,setIsFully] = useState(false)
+    useEffect(()=> {
+        if (item.length) {
+            setIsFully(true)
+        }
+        else {
+            setIsFully(false)
+        }
+    })
     return(
-        <header>
+        <header className={`container ${s.container}`}>
             <div className={s.header}>
                     <div>
                         <Link href = {'/'}>
@@ -14,7 +25,7 @@ export default function Header() {
                     </div>
                     <div className={s.navigation}>
                         <Link href = {'/'} >Главная</Link>
-                        <Link href = {'/'} >О нас</Link>
+                        <Link href = {'/aboutUs'} >О нас</Link>
                         <Link href = {'/contacts'} >Контакты</Link>
                     </div>
                     <div>
@@ -39,6 +50,7 @@ export default function Header() {
                         <Link href="/basket">
                             <a>
                                 <Image width={0} height={0} src={'/img/icons/bag.svg'} alt='bag'/>
+                                {isFully && <div className={s.redcircle}/>}
                             </a>
                         </Link>
                         <Link href="">
@@ -49,7 +61,7 @@ export default function Header() {
                     </div>
                     
             </div>
-            <CategoriesList />
+            {!without && <CategoriesList />}
         </header>
     )
 }
