@@ -11,11 +11,11 @@ export const PriceSlice = createSlice({
        increment : (state,action) => {
         state.value += action.payload;
        },
-       decrement : (state,action) => {
-        state.value -= action.payload;
+       zeroing : (state) => {
+        state.value = 0;
        }
     }
 });
-export const { increment, decrement } = PriceSlice.actions
+export const { increment, zeroing } = PriceSlice.actions
 
 export default PriceSlice.reducer

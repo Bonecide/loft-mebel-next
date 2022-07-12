@@ -4,6 +4,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useDispatch } from 'react-redux';
 import { AddBasket } from '../../store/Slices/basketSlice';
 import { increment } from '../../store/Slices/priceSlice'
+import dayjs from 'dayjs';
 
 export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,info}) {
     const good = {
@@ -13,6 +14,7 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,
         oldPrice,
         discount,
         size,
+        date : dayjs().format('DD.MM.YYYY')
     }
     const dispatch = useDispatch()
     const addInBasket = () => {

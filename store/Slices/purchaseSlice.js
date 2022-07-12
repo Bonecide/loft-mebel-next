@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-const initialState =  []
+const initialState = {
+    value : []
+}
 
 export const purchaseSlice = createSlice({
     
@@ -7,7 +9,7 @@ export const purchaseSlice = createSlice({
     initialState,
     reducers : {
        addPurchase : (state,action) => {
-        state.push(action.payload)
+        state.value.push (action.payload)
        },
        
     }

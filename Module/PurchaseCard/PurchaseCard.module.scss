@@ -1,0 +1,74 @@
+.Card {
+    height: 90px;
+    display : flex;
+    .good {
+        width:50%;
+        display:flex;
+        align-items: center;
+        padding: 15px;
+        gap: 16px;
+        border:1px solid #F3F3F3;
+        &:first-child {
+            border-top:none;
+        }
+        img {
+            width:53px;
+            height:40px;
+        }
+        p {
+            font-size: 12px;
+            font-weight: 400;   
+        }
+    }
+    .price {
+        width:10%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        gap: 16px;
+        border:1px solid #F3F3F3;
+        &:first-child {
+            border-top:none;
+        }
+        p {
+            font-size: 12px;
+            font-weight: 400;
+            color :#686868;
+        }
+    }
+    .date {
+        width:20%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        gap: 16px;
+        border:1px solid #F3F3F3;
+        &:first-child {
+            border-top:none;
+        }
+        p {
+            font-size: 12px;
+            font-weight: 400;
+            color :#686868;
+        }
+    }
+    .status{
+        width:20%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        gap: 16px;
+        border:1px solid #F3F3F3;
+        &:first-child {
+            border-top:none;
+        }
+        p {
+            font-size: 12px;
+            font-weight: 400;
+            color :#686868;
+        }
+    }
+}

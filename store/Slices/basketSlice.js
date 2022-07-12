@@ -13,11 +13,11 @@ export const BasketSlice = createSlice({
         BasketDelete: (state ,action) => {
             state.splice (action.payload , 1)
         },
-        Purchase: (state) => {
-            state.splice(0,arr.length);
+        PurchaseGoods: (state) => {
+            state.splice(0,state.length);
         }
     }
 });
-export const { AddBasket, BasketDelete,Purchase } = BasketSlice.actions
+export const { AddBasket, BasketDelete,PurchaseGoods } = BasketSlice.actions
 
 export default BasketSlice.reducer

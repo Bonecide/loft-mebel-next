@@ -1,17 +1,20 @@
 import { useSelector, useDispatch } from 'react-redux';
 import BasketCard from '../../Module/BasketCard/BasketCard';
 import s from './BasketList.module.scss'
-import { BasketDelete } from '../../store/Slices/basketSlice';
+import { BasketDelete, PurchaseGoods } from '../../store/Slices/basketSlice';
 import { Link } from 'next/link';
 import { addPurchase } from '../../store/Slices/purchaseSlice';
 import YouLikeIt from '../YouLikeIt/YouLikeIt';
+import { zeroing } from '../../store/Slices/priceSlice';
 export default function BasketList() {
     const dispatch = useDispatch()
     const price = useSelector((state) => state.price);
     const item = useSelector((state) => state.basket);
+    
     const Purchase = () => {
-        dispatch(addPurchase(item))
-        dispatch(Purchase)
+        item.map((info) => dispatch(addPurchase(info)))
+        dispatch(PurchaseGoods())
+        dispatch(zeroing())
     }
     return(
         <div>
