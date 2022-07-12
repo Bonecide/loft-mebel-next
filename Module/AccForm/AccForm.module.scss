@@ -1,0 +1,98 @@
+.container {
+    margin-top: 42px;
+    h2 {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .form {
+        form {
+            margin-top: 30px;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            .userinfo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                width: 45%;
+                input {
+                    border: none;
+                    
+                    box-shadow: 1px 1px 5px 0px #00000012 inset;
+                    width: 100%;
+                    height: 38px;
+                    padding-left: 10px;
+                    &:focus-visible {
+                        outline: none;
+                    }
+                }
+                p {
+                    color: #969696;
+                    font-size: 12px;
+                }
+            }
+            }
+            .place {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    width: 50%;
+                    input {
+                        border: none;
+                        
+                        box-shadow: 1px 1px 5px 0px #00000012 inset;
+                        width: 100%;
+                        height: 38px;
+                        padding-left: 10px;
+                        &:focus-visible {
+                            outline: none;
+                        }
+                    }
+                    p {
+                        color: #969696;
+                        font-size: 12px;
+                    }
+                }
+                .street {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    width: 100%;
+                }
+                .home {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                    width: 50%;
+                }
+            }
+            .button {
+                display: flex;
+                justify-content: flex-end;
+                gap:10px;
+                button {
+                    border:none;
+                    padding: 13px 20px;
+                    color:white;
+                    background: #245462;
+                    cursor:pointer; 
+                }
+                .cancell {
+                    background: #D74444;
+                }
+            }
+        }
+        
+    }
+}

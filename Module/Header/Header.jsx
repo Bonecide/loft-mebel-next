@@ -53,7 +53,7 @@ export default function Header({without}) {
                                 {isFully && <div className={s.redcircle}/>}
                             </a>
                         </Link>
-                        <Link href="">
+                        <Link href="/personalaccount">
                             <a>
                                 <Image width={0} height={0} src={'/img/icons/profile-icon.svg'} alt='profile'/>
                             </a>

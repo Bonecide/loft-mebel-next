@@ -3,12 +3,16 @@ import BasketCard from '../../Module/BasketCard/BasketCard';
 import s from './BasketList.module.scss'
 import { BasketDelete } from '../../store/Slices/basketSlice';
 import { Link } from 'next/link';
+import { addPurchase } from '../../store/Slices/purchaseSlice';
 import YouLikeIt from '../YouLikeIt/YouLikeIt';
 export default function BasketList() {
     const dispatch = useDispatch()
     const price = useSelector((state) => state.price);
     const item = useSelector((state) => state.basket);
-    
+    const Purchase = () => {
+        dispatch(addPurchase(item))
+        dispatch(Purchase)
+    }
     return(
         <div>
            
@@ -30,7 +34,7 @@ export default function BasketList() {
                 <div className={s.order}>
                     <p>Итоговая стоимость:</p>
                     <h3>{price.value}₽</h3>
-                    <button>Оформить заказ</button>
+                    <button onClick = {Purchase}>Оформить заказ</button>
                 </div>
 
                 <YouLikeIt/>
