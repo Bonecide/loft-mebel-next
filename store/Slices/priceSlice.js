@@ -19,6 +19,6 @@ export const PriceSlice = createSlice({
        }
     }
 });
-export const { increment, decrement,zeroing } = PriceSlice.actions
+export const { increment, decrement ,zeroing } = PriceSlice.actions
 
 export default PriceSlice.reducer

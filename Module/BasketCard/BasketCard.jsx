@@ -2,8 +2,8 @@ import IMG from "../../Components/IMG/IMG";
 import s from './BasketCard.module.scss'
 import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch } from 'react-redux';
-import { decrement } from '../../store/Slices/priceSlice'
 import { BasketDelete } from '../../store/Slices/basketSlice'
+import { decrement } from "../../store/Slices/priceSlice";
 export default function BasketCard({name,newPrice,img,oldPrice,discount,size,idx}) {
     const dispatch = useDispatch()
 
