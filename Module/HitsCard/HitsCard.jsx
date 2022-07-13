@@ -6,7 +6,7 @@ import { AddBasket } from '../../store/Slices/basketSlice';
 import { increment } from '../../store/Slices/priceSlice'
 import dayjs from 'dayjs';
 
-export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,info}) {
+export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,info, ...props}) {
     const good = {
         name ,
         newPrice,
@@ -24,8 +24,8 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,
 
     return(
 
-        <div className={s.relative}>
-            <div className={s.Card}>
+        <div className={s.relative}  >
+            <div className={s.Card} >
                 <div className={s.icon_container}>
                 {discount ? 
                     <div className={s.discount}>
@@ -40,7 +40,7 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,
                     <FavoriteBorderIcon className={s.heart}/>
                     
                 </div>
-                <div>
+                <div {...props}>
                 <IMG src = {img}/>
                 </div>
                 <div className={s.info}>

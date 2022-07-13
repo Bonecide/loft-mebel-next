@@ -3,7 +3,9 @@ import item from '../../fake-data/hits.json'
 import { useEffect } from 'react'
 import HitsCard from '../../Module/HitsCard/HitsCard';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 export default function YouLikeIt() {
+    const router = useRouter()
     function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -27,7 +29,9 @@ export default function YouLikeIt() {
             <div className={s.CardContainer}>
                 {LikeIt? LikeIt.map((info,idx)=> (
                    info ?
-                   <HitsCard key ={`You'll like it${idx + 1}`}
+                   <HitsCard
+                   onClick = {() => router.push(`/catalog/item/${info.name}`)}
+                    key ={`You'll like it${idx + 1}`}
                    name={info.name}
                    type={info.type}
                    oldPrice={info.oldPrice}

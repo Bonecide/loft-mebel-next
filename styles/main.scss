@@ -30,6 +30,22 @@ p,h1,h2,h3,h4,h5 {
     right: -50px;
     z-index: 9999;
 }
+.ItemCard_container__DsVxD {
+    .slick-next::before {
+        content: url('../public/img/icons/Stroke-next.svg');
+        width:6px;
+        height: 12px;
+        left:unset;
+        top:0;
+    }
+    .slick-prev::before {
+        content: url('../public/img/icons/Stroke-prev.svg');
+        width:6px;
+        height: 12px;
+        left:0px;
+        top:0;
+    }
+}
 .slick-prev {
     z-index: 9999;
 }
