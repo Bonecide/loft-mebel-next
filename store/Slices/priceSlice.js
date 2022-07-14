@@ -12,7 +12,7 @@ export const PriceSlice = createSlice({
         state.value += action.payload;
        },
        decrement : (state,action) => {
-        state.value -+ action.payload
+        state.value -= action.payload
        },
        zeroing : (state) => {
         state.value = 0;

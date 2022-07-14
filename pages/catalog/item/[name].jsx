@@ -6,10 +6,10 @@ import ItemCard from '../../../Module/ItemCard/ItemCard';
 export default function itemId() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const router = useRouter()
-    var timly = [];
-    var searchField = "name";
-    var searchVal = router.query.name;
-    for (var i=0 ; i < items.length ; i++)
+    const timly = [];
+    const searchField = "name";
+    const searchVal = router.query.name;
+    for (let i=0 ; i < items.length ; i++)
     {
         if (items[i][searchField] == searchVal) {
             timly.push(items[i]);

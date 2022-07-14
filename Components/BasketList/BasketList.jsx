@@ -21,7 +21,7 @@ export default function BasketList() {
            
             <div className={s.quanity}>
                 <h3>Ваша корзина</h3>
-                <p>{item.length} {item.length === 1 ? "Предмет" : (item.length === 10 ? "Предметов" : "Предмета" )}</p>
+                <p>{item.length} {item.length === 0 ? "Предметов" : (item.length === 10 ? "Предметов" : (item.length === 1 ? "Предмет" : "Предмета") )}</p>
             </div>
                 {item ? item.map((info,idx) => (
                     <BasketCard

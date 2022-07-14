@@ -81,7 +81,7 @@ export default function PersonalInfo({change}) {
                         </div>
                 </div>
                 <div className={s.button}>
-                    <button onClick = {() => change(true)}>Изменить</button>
+                    <button onClick = {() => change(false)}>Изменить</button>
                 </div>
             </div>
         </div>

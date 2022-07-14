@@ -6,7 +6,7 @@ export default function Hits() {
     const router = useRouter()
     return(
     <div className={s.hits}>
-        <h3>
+        <h3 className ={s.title}>
             Хиты продаж
         </h3>
         <div className={s.container}>

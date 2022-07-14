@@ -18,7 +18,7 @@ export default function AccForm({change}) {
       });
       const dispatch = useDispatch()
       const success = (data) => {
-         change(false)
+         change(true)
          dispatch(UpdateInfo(data))
          
       }
@@ -72,7 +72,7 @@ export default function AccForm({change}) {
                             </div>
                     </div>
                     <div className={s.button}>
-                        <button className={s.cancell} onClick= {() => change(false)}>Отмена</button>
+                        <button className={s.cancell} onClick= {() => change(true)}>Отмена</button>
                         <button type='submit'>Готово</button>
                       
                     </div>

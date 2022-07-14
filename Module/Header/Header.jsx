@@ -4,9 +4,11 @@ import s from './Header.module.scss'
 import CategoriesList from './../../Components/CategoriesList/CategoriesList';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
+import Search from "../Search/Search";
 export default function Header({without}) {
     const item = useSelector((state) => state.basket);
     const [isFully,setIsFully] = useState(false)
+    const [value,setValue] = useState()
     useEffect(()=> {
         if (item.length) {
             setIsFully(true)
@@ -16,7 +18,7 @@ export default function Header({without}) {
         }
     })
     return(
-        <header className={`container ${s.container}`}>
+        <header onClick={()=> setValue(null)} className={`container ${s.container}`}>
             <div className={s.header}>
                     <div>
                         <Link href = {'/'}>
@@ -29,7 +31,7 @@ export default function Header({without}) {
                         <Link href = {'/contacts'} >Контакты</Link>
                     </div>
                     <div>
-                        <input placeholder="Поиск" className={s.input} type="text"  />
+                        <Search value={value} setValue={setValue}/>
                     </div>
                     <div className={s.info_wrapper}>
                         <div className={s.contact}>

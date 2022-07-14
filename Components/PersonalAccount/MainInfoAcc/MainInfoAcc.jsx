@@ -8,7 +8,7 @@ import MyPurchase from '../MyPurchase/MyPurchase';
 export default function MainInfoAcc() {
     const info = useSelector((state) => state.personal.info);
 
-    const [isChange,setIsChange] = useState(info.length ? false : true)
+    const [isChange,setIsChange] = useState(true )
     return(
 
         <div className={`${s.container} container`}>
