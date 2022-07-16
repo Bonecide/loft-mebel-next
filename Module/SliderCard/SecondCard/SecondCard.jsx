@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 export default function SecondCard(){
     const router = useRouter()
     return(
-        <div className={s.Card} >
+        <div style={{'backgroundImage': `url(/img/banner.png)`}} className={s.Card} >
         <div>
             
             <div>

@@ -1,10 +1,9 @@
 import s from './SliderCard.module.scss'
 import { useRouter } from 'next/router';
-
 export default function SliderCard() { 
     const router = useRouter()
     return(
-        <div className={s.Card} >
+        <div style={{'backgroundImage': `url(/img/banner.png)`}} className={s.Card} >
             <div>
                 
                 <div>
