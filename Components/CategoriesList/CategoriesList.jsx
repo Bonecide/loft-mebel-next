@@ -2,13 +2,15 @@ import CategoriesCard from '../CategoriesCard/CategoriesCard'
 import s from './CategoriesList.module.scss'
 import CardInfo from '/fake-data/furniture-type.json'
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 export default function CategoriesList() {
     const [isView, setIsView] = useState(false)
+    const router = useRouter()
     return(
         <div>
             <div className={s.container}>
                 {CardInfo.map((info,idx) => (
-                    <CategoriesCard title={info.type} categories={info.categories} img={info.img} key={`CardN${idx}`}/>
+                    <CategoriesCard  title={info.type} categories={info.categories} img={info.img} key={`CardN${idx}`}/>
                 ))}
                 <div className={s.Card}>
                     <p>Акция</p>

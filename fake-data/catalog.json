@@ -32,7 +32,8 @@
             }
         ],
         "images" : ["/img/white-chair.svg","/img/imgaes 2.svg", "/img/imgaes 3.svg", "/img/imgaes 4.svg"],
-        "tags" : ["Гостинные" , "Мягкая мебель" , "Стулья"]
+        "tags" : ["Гостинные" , "Мягкая мебель" , "Стулья"],
+        "color" : "white"
         
     },
     {
@@ -106,7 +107,7 @@
             }
         ],
         "images" : ["/img/buffet.svg","/img/imgaes 2.svg", "/img/imgaes 3.svg", "/img/imgaes 4.svg"],
-        "tags" : ["Гостинные" , "Мягкая мебель" , "Буффеты"]
+        "tags" : ["Кухни" , "Мягкая мебель" , "Буффеты"]
     },
     {
         "id" : 7,

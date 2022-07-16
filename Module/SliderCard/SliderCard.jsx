@@ -1,6 +1,8 @@
 import s from './SliderCard.module.scss'
-export default function SliderCard() { 
+import { useRouter } from 'next/router';
 
+export default function SliderCard() { 
+    const router = useRouter()
     return(
         <div className={s.Card} >
             <div>
@@ -9,7 +11,7 @@ export default function SliderCard() {
                     <h1>LOFT МЕБЕЛЬ</h1>
                     <h3>Современная и удобная мебель в Анапе</h3>
                 </div>
-                <button>СМОТРЕТЬ КАТАЛОГ</button>
+                <button onClick={() => router.push("/basket")}>СМОТРЕТЬ КАТАЛОГ</button>
             </div>
 
         </div>
