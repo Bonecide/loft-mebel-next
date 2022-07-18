@@ -1,5 +1,5 @@
 import IMG from '../../Components/IMG/IMG'
-import s from './HitsCard.module.scss'
+import s from './CardForWish.module.scss'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useDispatch } from 'react-redux';
 import { AddBasket } from '../../store/Slices/basketSlice';
@@ -7,11 +7,11 @@ import { increment } from '../../store/Slices/priceSlice'
 import dayjs from 'dayjs';
 import Modal from './../../Components/Modal/Modal';
 import { useState } from 'react';
-import { Addwish } from '../../store/Slices/wishListSlice';
+import { deleteWish } from '../../store/Slices/wishListSlice';
 
-export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,info,isWish, ...props}) {
+export default function CardForWish({name,type,oldPrice,newPrice,discount,size,img,info,idx, ...props}) {
     const [modal,setModal] = useState(false)
-    const [wish,setWish] = useState(false)
+    
     const good = {
         name ,
         newPrice,
@@ -28,9 +28,8 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,
         setModal(true)
 
     } 
-    const addInWish = ()=> {
-        dispatch(Addwish(info))
-        setWish(true)
+    const deleteFromWish = () => {
+        dispatch(deleteWish(idx))
     }
      
     return( 
@@ -48,7 +47,7 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,
 
                     </div>
                     }
-                    <FavoriteBorderIcon onClick = {addInWish} className={s.heart}/>
+                    <FavoriteBorderIcon onClick = {deleteFromWish} className={s.heart}/>
                     
                 </div>
                 <div {...props}>
@@ -88,9 +87,6 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,
         {modal && (
       <Modal img={img} text={` ${name} успешно добавлен в корзину !`} close={setModal} />
       )}  
-      {wish && (
-        <Modal isWish img={img} text={` ${name} успешно добавлен в список желаемого !`} close={setWish} />
-      )}
       </>  
     )
 }

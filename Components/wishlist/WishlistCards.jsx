@@ -1,19 +1,29 @@
 import s from './WishlistCards.module.scss'
 import { useSelector } from 'react-redux';
-import HitsCard from '../../Module/HitsCard/HitsCard';
 import { useRouter } from 'next/router';
-
+import CardForWish from '../../Module/CardForWish/CardForWish';
+import YouLikeIt from '../YouLikeIt/YouLikeIt';
+import Link from 'next/link';
 export default function WishlistCards() {
     const item = useSelector((state) => state.wishlist)
     const router = useRouter()
     return(
-        <div className='container'>
-            <h2></h2>
-            <div>
-                {item ? item.map((info,idx) => (
-                    <HitsCard
+        <div className={`container ${s.container}`}>
+            <div className={s.crumb}>
+                <Link href={'/'}>
+                    <a>Главная</a>
+                </Link>
+            <p>/</p>
+            <Link href={'/wishlist'}>
+               <a> Список желаемого </a>
+            </Link>
+           </div>
+            <div className = {s.wrap}>
+                
+                {item.length ? item.map((info,idx) => (
+                    <CardForWish
                     onClick = {() => router.push(`/catalog/item/${info.name}`)}
-                    key ={`HitN${idx + 1}`}
+                    key ={`WishN${idx + 1}`}
                     name={info.name}
                     type={info.type}
                     oldPrice={info.oldPrice}
@@ -22,6 +32,7 @@ export default function WishlistCards() {
                     discount={info.discount}
                     size={info.size}
                     info={info}
+                    idx ={idx}
                     />
                 )) :
                 <div>
@@ -29,6 +40,7 @@ export default function WishlistCards() {
                 </div>
                 }
             </div>
+            <YouLikeIt/>
         </div>  
     )
 }

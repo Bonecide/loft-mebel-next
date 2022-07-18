@@ -44,7 +44,7 @@ export default function Header({without}) {
                         </div>
                     </div>
                     <div className={s.icons}>
-                        <Link href="">
+                        <Link href="/wishlist">
                             <a>
                                 <Image width={0} height={0} src={'/img/icons/wishlist-icon.svg'} alt='wishlist'/>
                             </a>

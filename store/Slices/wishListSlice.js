@@ -12,9 +12,6 @@ export const wishListSlice = createSlice({
         },
         deleteWish: (state ,action) => {
             state.splice (action.payload , 1)
-        },
-        PurchaseGoods: (state) => {
-            state.splice(0,state.length);
         }
     }
 });

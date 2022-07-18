@@ -31,11 +31,10 @@
         text-align: end;
         
         .heart {
+           
             cursor: pointer;
-            transition:all,0.3s;
-            &:hover {
-                color:red;
-            }
+            color:red;
+         
         }
         .discount {
             display: flex;
