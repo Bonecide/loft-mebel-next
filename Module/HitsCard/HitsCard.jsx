@@ -5,8 +5,11 @@ import { useDispatch } from 'react-redux';
 import { AddBasket } from '../../store/Slices/basketSlice';
 import { increment } from '../../store/Slices/priceSlice'
 import dayjs from 'dayjs';
+import Modal from './../../Components/Modal/Modal';
+import { useState } from 'react';
 
 export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,info, ...props}) {
+    const [modal,setModal] = useState(false)
     const good = {
         name ,
         newPrice,
@@ -20,10 +23,11 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,
     const addInBasket = () => {
         dispatch(AddBasket(good))  
         dispatch(increment(newPrice)) 
+        setModal(true)
     } 
-
-    return(
-
+    
+    return( 
+<>
         <div className={s.relative}  >
             <div className={s.Card} >
                 <div className={s.icon_container}>
@@ -73,6 +77,10 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,
                     <button onClick={addInBasket}>Добавить в корзину</button>
                 </div>
             </div>
-        </div>  
+        </div>
+        {modal && (
+      <Modal img={img} text={` ${name} успешно добавлен в корзину !`} close={setModal} />
+      )}  
+      </>  
     )
 }

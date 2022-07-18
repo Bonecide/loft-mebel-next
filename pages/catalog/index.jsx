@@ -20,8 +20,8 @@ export default function Catalog() {
     const copy = [...item]
     const trueCategories = []
     const[open,setOpen] = useState(false)
-    const [goods,setGoods] = useState(copy)
-    console.log(goods)
+    const [goods,setGoods] = useState(router.query.title ? item.filter((i) => i.tags.includes(type)) : (router.query.category ? copy.filter((i) => i.tags.includes(type)  && i.tags.includes(category) ): copy ) )
+    const [Pricefilter,setPricefilter] = useState(copy)
     const [type,setType] = useState(router.query.title )
     const[category,setCategory] = useState(router.query.category)
     const[categories,setCategories] = useState([])
@@ -34,26 +34,54 @@ export default function Catalog() {
       };
    
     const timly = []
+    // useEffect(()=> {
+    //     if(type) {
+    //         setPricefilter()
+    //     }
+    //     else if(category) {
+    //         setPricefilter()
+    //     }
+    // },[])
+    useEffect(() => {
+        setPricefilter(item.filter((i) => i.tags.includes(type)))
+    },[type])
+    useEffect(() => {
+        setPricefilter(copy.filter((i) => i.tags.includes(type)  && i.tags.includes(category)))
+    },[category])
+    useEffect(() => {
+        setPricefilter(goods)
+    },[sort])
    useEffect(()=> {
-    
-    for (let i = 0; i < copy.length; i++) {
-        if (price && copy[i].newPrice > price[0] * 1000 &&  copy[i].newPrice < price[1] * 1000  ) {
+    for (let i = 0; i < Pricefilter.length; i++) {
+        if (price && Pricefilter[i].newPrice > price[0] * 1000 &&  Pricefilter[i].newPrice < price[1] * 1000  ) {
 
-            timly.push(copy[i])
+            timly.push(Pricefilter[i])
         }
-        setGoods(timly)
-     
+      
+        
     }
+        if (sort === 'По возрастанию цены') {
+        setGoods(sortbyPrice(timly))
+       }
+       else if (sort === 'По убыванию цены') {
+        setGoods(sortbyPrice(timly).reverse())
+       }
+       else if (sort === 'По возрастанию цены') {
+        setGoods(sortbyId(timly))
+       }
+
+    else  setGoods(timly)
+        
    },[price])
    useEffect(()=> {
     for (let i = 0; i < types.length; i++) {
-        if (type && types[i].type === type.toString() ) {
+        if (type && types[i].type === type ) {
 
             trueCategories.push(types[i])
         }
     }
     setCategories(trueCategories)
-  
+ 
    },[type])
    useEffect(()=> {
     setType(router.query.title && router.query.title)
@@ -62,11 +90,10 @@ export default function Catalog() {
 
    useEffect(()=> {
     setGoods(type && copy.filter((i) => i.tags.includes(type)  && i.tags.includes(category)))
-    if(type === 'Выберите Раздел') {
-        setGoods(item)
-    }
+    
     if(category === "Выберите Категорию") {
-        if (type ==='Выберите Раздел') {
+        if (type ==="Выберите Раздел") {
+            
             setGoods(item)
         }
         else {
@@ -77,30 +104,37 @@ export default function Catalog() {
    if (!category ) {
     setGoods(item.filter((i) => i.tags.includes(type)))
    }
+   
    },[type , category])
    useEffect(() => {
     if(!category && !type) {
         setGoods(copy)
     }
    },[])
+   useEffect(() => {
+    if(type === 'Выберите Раздел') {
+        setGoods(item)
+    }
+   },[type])
    const sortbyPrice = (array) => array.sort((a,b)=> a.newPrice-b.newPrice)
    const sortbyId = (array) => array.sort((a,b)=> a.id-b.id)
    useEffect(() => {
     if (sort ==='По возрастанию цены') {
         
-            setGoods(sortbyPrice(goods))
+            setGoods(sortbyPrice([...goods]))
             setvalue(1)
          
     }
     if (sort === "По убыванию цены") {
-        setGoods(sortbyPrice(goods).reverse())
+        setGoods(sortbyPrice([...goods]).reverse())
         setvalue(3)
         
        
     }
     if (sort === "По популярности") {
-        sortbyId(goods)
-        setvalue(2)
+        const CopyId = [...goods]
+        sortbyId(CopyId)
+        setvalue(4123)
        
     }
    },[sort])
@@ -109,12 +143,12 @@ export default function Catalog() {
     return(
         <Layout title={'Каталог'}>
             <div className={`${s.catalog} container`}>
-                <div className={s.filters}>
+                <div onClick ={()=> setOpen(false)} className={s.filters}>
                     <div>
                         <h2>Раздел</h2>
                         <div className={s.selects}>
                             <select value={type}  onChange={(e)=> setType(e.target.value)} >
-                                <option>Выберите Раздел</option>
+                                <option value={null}>Выберите Раздел</option>
                                 {types.map((info,idx) => (
 
                                     <option key={`TypeOfFurniture${idx}`}>
@@ -159,13 +193,13 @@ export default function Catalog() {
                     </div>
                             
                 </div>
-                <div onClick ={()=> setOpen(!open)} className ={s.goodsList}>
-                    <div className={s.sort}>
+                <div  className ={s.goodsList}>
+                    <div onClick ={()=> setOpen(!open)}  className={s.sort}>
                         <p>{sort}</p>
                         <IMG src={'/img/icons/sort.svg'}/>
                        
                     </div>
-                    <div className={s.parent}>  
+                    <div onClick ={()=> setOpen(false)} className={s.parent}>  
                         {open && 
                             <div className={s.absolute}>
                                 {filter.map((info,idx) => (
@@ -176,7 +210,7 @@ export default function Catalog() {
                             </div>    
                             }
                     </div>    
-                    <div className={s.container}>
+                    <div onClick ={()=> setOpen(false)} className={s.container}>
                     {goods && goods.map((info,idx) => (
                         <HitsCard
                         onClick = {() => router.push(`/catalog/item/${info.name}`)}

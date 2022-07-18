@@ -7,9 +7,11 @@ import { AddBasket } from '../../store/Slices/basketSlice';
 import { useDispatch } from 'react-redux';
 import dayjs from 'dayjs';
 import { increment } from '../../store/Slices/priceSlice';
+import Modal from './../../Components/Modal/Modal';
 export default function ItemCard({info}) {
     const dispatch = useDispatch()
     const [image,setImage] = useState(0)
+    const [modal,setModal] = useState(false)
     useEffect(()=> {
         setImage(0)
     },[info.images])
@@ -23,6 +25,7 @@ export default function ItemCard({info}) {
       const addBasket = () => {
         dispatch(AddBasket({...info , date: dayjs().format('DD.MM.YYYY')}))
         dispatch(increment(info.newPrice))
+        setModal(true)
       }
     return(
         <div className={s.container}>
@@ -101,6 +104,9 @@ export default function ItemCard({info}) {
                             </div>
                         </div>
                 </div>
+                {modal && (
+      <Modal img={info.img} text={` ${info.name} успешно добавлен в корзину !`} close={setModal} />
+      )}  
         </div>
     )
 }
