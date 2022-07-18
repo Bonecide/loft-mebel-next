@@ -6,6 +6,7 @@ import  Link  from 'next/link';
 import { AddBasket } from '../../store/Slices/basketSlice';
 import { useDispatch } from 'react-redux';
 import dayjs from 'dayjs';
+import { increment } from '../../store/Slices/priceSlice';
 export default function ItemCard({info}) {
     const dispatch = useDispatch()
     const [image,setImage] = useState(0)
@@ -19,6 +20,10 @@ export default function ItemCard({info}) {
         slidesToScroll: 1,
 
       };
+      const addBasket = () => {
+        dispatch(AddBasket({...info , date: dayjs().format('DD.MM.YYYY')}))
+        dispatch(increment(info.newPrice))
+      }
     return(
         <div className={s.container}>
                         <link
@@ -64,7 +69,7 @@ export default function ItemCard({info}) {
                             <h3>
                                 {info.newPrice}₽
                             </h3>
-                            <button onClick={()=> dispatch(AddBasket({...info , date: dayjs().format('DD.MM.YYYY')})) }>Купить</button>
+                            <button onClick={addBasket}>Купить</button>
                     </div>
                     <div className={s.quality}>
                         <div>

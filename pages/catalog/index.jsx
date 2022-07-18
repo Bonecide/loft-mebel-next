@@ -124,7 +124,7 @@ export default function Catalog() {
 
                                 
                             </select>
-                            <select value={category} onChange={(e) => setCategory(e.target.value)} disabled = {categories.length ? false : true}>
+                            <select value={category} onChange={(e) => setCategory(e.target.value)}>
                                 <option>Выберите Категорию</option>
                                 {categories.length && categories[0].categories.map((info,idx) => (
                                     <option key={`categoriesMN${idx}`}>
