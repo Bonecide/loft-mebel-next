@@ -1,7 +1,8 @@
 import s from './Footer.module.scss'
 import IMG from './../../Components/IMG/IMG';
+import { useRouter } from 'next/router';
 export default function Footer() {
-    
+    const router = useRouter()
     return(
         <footer className={`container ${s.footer}`}>
                 <div>
@@ -10,14 +11,44 @@ export default function Footer() {
                     </div>
                     <div className={s.lists}>
                         <ul>
-                            <li>Кухни</li>
-                            <li>Спальни</li>
-                            <li>Гостинные</li>
+                            <li onClick={() => router.push({
+                                pathname: '/catalog',
+                                query : {
+                                    title : 'Кухни' 
+                                }
+                            })}>Кухни</li>
+                            <li onClick={() => router.push({
+                                pathname: '/catalog',
+                                query : {
+                                    title : 'Спальни' 
+                                }
+                            })}>Спальни</li>
+                            <li onClick={() => router.push({
+                                pathname: '/catalog',
+                                query : {
+                                    title : 'Гостинные' 
+                                }
+                            })}>Гостинные</li>
                         </ul>
                         <ul>
-                            <li>Прихожие</li>
-                            <li>Офисная мебель</li>
-                            <li>Детская</li>
+                            <li onClick={() => router.push({
+                                pathname: '/catalog',
+                                query : {
+                                    title : 'Прихожие' 
+                                }
+                            })}>Прихожие</li>
+                            <li onClick={() => router.push({
+                                pathname: '/catalog',
+                                query : {
+                                    title : 'Офисная мебель' 
+                                }
+                            })}>Офисная мебель</li>
+                            <li onClick={() => router.push({
+                                pathname: '/catalog',
+                                query : {
+                                    title : 'Детская' 
+                                }
+                            })}>Детская</li>
                         </ul>
                         <ul>
                             <li>Шкафы</li>
