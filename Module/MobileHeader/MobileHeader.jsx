@@ -6,6 +6,10 @@ import { useSelector } from 'react-redux';
 import Search from './../Search/Search';
 import CardInfo from '/fake-data/furniture-type.json'
 import { useRouter } from 'next/router';
+import ClearIcon from '@mui/icons-material/Clear';
+import HomeIcon from '@mui/icons-material/Home';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import InfoIcon from '@mui/icons-material/Info';
 export default function MobileHeader() {
     const item = useSelector((state) => state.basket);
     const router = useRouter()
@@ -20,11 +24,12 @@ export default function MobileHeader() {
             setIsFully(false)
         }
     },[item])
+    
     return(
         <header className = {`container ${s.container}`}>
             <div className={s.navigation}>
                 <div className={s.logo_and_burger} >
-                    <IMG className={s.burger} src={'/img/icons/menu-icon.svg'}/>
+                    <IMG onClick={() => setOpen(true)} className={s.burger} src={'/img/icons/menu-icon.svg'}/>
                     <IMG onClick={() => router.push('/')} className={s.logo} src={'/img/LOGO.svg'}/>
                 </div>
                 <div className={s.icons}>
@@ -64,6 +69,41 @@ export default function MobileHeader() {
                     </div>
                 ))}
             </div>
+            {open && (
+                <div className ={s.burger_menu}>
+                    <div className={s.burger_title}>
+                        <h3>Меню</h3>
+                        <div onClick={()=> setOpen(false)} className={s.close}><ClearIcon className={s.close_icon}/></div>
+                    </div>
+                    <div className={s.burger_info}>
+                        <div onClick={() => router.push('/')} >
+                        <HomeIcon className={s.icon}/>
+                        <p>Главная</p>
+                        </div>
+                        <div onClick={() => router.push('/aboutUs')}>
+                        <InfoIcon className={s.icon}/>
+                        <p>О нас</p>
+                        </div>
+                        <div onClick={() => router.push('/contacts')}>
+                        <AlternateEmailIcon className={s.icon}/>
+                        <p>Контакты</p>
+                        </div>
+                    </div>
+                    <div className={s.categories}>
+                            <h3>Категории</h3>
+                            <div className={s.Burger_container}>
+                                {CardInfo.map((info,idx) => (
+                                    <div className={s.BurgerCard} key={`burgerCategoryN${idx}`}>
+                                        <IMG src={info.img}/>
+                                        <p>{info.type}</p>
+                                    </div>    
+                                ))}
+                            </div>
+                    </div>
+                </div>
+            )
+                
+            }
         </header>
     )
 }

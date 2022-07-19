@@ -10,7 +10,7 @@
         align-items: center;
         justify-content: center;
         gap: 50px;
-        z-index: 9999;
+        z-index: 4;
         @include mobile {
             flex-direction: column-reverse;
             align-items:flex-start;

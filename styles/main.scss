@@ -29,7 +29,7 @@ p,h1,h2,h3,h4,h5 {
     color: #414141 !important;
     position: absolute;
     right: -50px;
-    z-index: 9999;
+    z-index: 1 !important;
 }
 .ItemCard_container__DsVxD {
     .slick-next::before {
@@ -48,7 +48,7 @@ p,h1,h2,h3,h4,h5 {
     }
 }
 .slick-prev {
-    z-index: 9999;
+    z-index: 2;
 }
 .container {
     width: 78%;
