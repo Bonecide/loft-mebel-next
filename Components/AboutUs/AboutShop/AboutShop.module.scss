@@ -48,7 +48,11 @@
         flex-direction: column;
         gap: 15px;
         @include mobile {
-            width:100%;
+            gap:5px;
+            padding-left:10px;
+            width:95%;;
+            align-items:center;
+            justify-content:center;
         }
         .title {
             font-size:12px;
