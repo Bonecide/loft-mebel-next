@@ -6,7 +6,7 @@ export default function Econom() {
     return(
 
         <div className ={s.econom}>
-            <h3>Мы поможем сэкономить время, силы и деньги!</h3>
+            <h3>Мы поможем сэкономить <br/>  время, силы и деньги!</h3>
                 <div className = {s.container}>
                     {item.map((info,idx) => (
                         <div className = {s.card} key={`economN${idx}`}>

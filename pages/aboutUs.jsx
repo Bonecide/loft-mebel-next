@@ -9,11 +9,14 @@ export default function AboutUs() {
 
     return(
         <Layout without={true} title={'О Нас'}>
+       
             <AboutShop/>
             <Profit/>
             <Advantages/>
             <OurPlus/>
             <Econom/>
-        </Layout>
+        
+         </Layout>
+        
     )
 }

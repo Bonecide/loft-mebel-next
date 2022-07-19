@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import './global.scss';
 *{
     padding: 0;
     margin: 0;
@@ -52,7 +53,12 @@ p,h1,h2,h3,h4,h5 {
 .container {
     width: 78%;
     margin: 0 auto ;
+    @include mobile {
+        width:95%;
+    }
 }
 .MuiSlider-colorPrimary {
     color:#245462 !important;
 }
+
+

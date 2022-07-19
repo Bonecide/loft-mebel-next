@@ -1,3 +1,4 @@
+@import '../../styles/global.scss';
 .search {
     display:flex;
     flex-direction:column;
@@ -10,6 +11,9 @@
         padding-left: 20px;
         &:focus-visible {
             outline: none;
+        }
+        @include mobile {
+            width:100%;
         }
     }
     .parent {
@@ -29,6 +33,16 @@
         align-items:center;
         gap:20px;
         transition: all 0.3s;
+        h3 {
+            @include mobile {
+                font-size: 18px;
+            }
+        }
+        p {
+            @include mobile {
+                font-size: 12px;
+            }
+        }
         img {
             width:50px;
             height:50px;

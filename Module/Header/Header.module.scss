@@ -1,14 +1,19 @@
+@import '../../styles/global.scss';
 .header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-bottom: 27px;
+    
     .logo {
         cursor:pointer;
     }
 }
 .container {
     padding-top: 56px;
+    @include mobile {
+        display: none;
+    }
 }
 
 .navigation {

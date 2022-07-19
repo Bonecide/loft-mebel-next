@@ -1,9 +1,13 @@
+@import '../../../styles/global.scss';
 .econom {
     margin-top : 100px;
     h3 {
         text-align: center;
         font-size: 24px;
         font-weight: 400;
+        @include mobile {
+            font-size: 18px;
+        }
     }
     h4 {
         margin-top: 174px;
@@ -11,18 +15,32 @@
         text-align: center;
         font-size: 24px;
         font-weight: 400;
+        @include mobile {
+            font-size: 18px;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
     }
     .container {
         margin-top: 75px;
         display: flex;
         justify-content: center;
         gap: 84px;
+        @include mobile {
+            margin-top: 38px;
+            flex-direction: column;
+            align-items: center;
+            gap:20px;
+        }
         .card {
             width:21%;
             display:flex;
             align-items: center;
             gap: 20px;
-
+            @include mobile {
+                width: 95%;
+                
+            }
             img {
                 width:20px;
                 height: 20px;

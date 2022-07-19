@@ -16,7 +16,7 @@ export default function Header({without}) {
         else {
             setIsFully(false)
         }
-    })
+    },[item])
     return(
         <header onClick={()=> setValue(null)} className={`container ${s.container}`}>
             <div className={s.header}>

@@ -1,7 +1,11 @@
+@import '../../../styles/global.scss';
 .advantages {
     padding: 80px 0px 80px 0px;
     width:100%;
     background-color: #D7E8ED;
+    @include mobile {
+        padding:50px 20px;
+    }
     .container {
         display:flex;
         flex-direction:column;
@@ -14,9 +18,15 @@
             align-items: center;
             gap:15px;
             width: 41%;
+            @include mobile {
+                width: 100%;
+            }
             h3 {
                 font-size: 18px;
                 font-weight: 400;
+                @include mobile {
+                   font-size:14px;
+                }
             }
             hr {
                 width:50px;
@@ -27,6 +37,9 @@
                 font-size: 14px;
                 font-weight: 400;
                 color:#686868;
+                @include mobile {
+                    font-size:12px;
+                 }
             }
         }
     }

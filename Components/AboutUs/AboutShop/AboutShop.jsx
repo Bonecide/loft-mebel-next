@@ -24,11 +24,15 @@ export default function AboutShop() {
 
                         </div>
                 </div>
-                <div>
+             
+                <div className={s.img_container}>
                     <IMG src={'/img/aboutUs_coach.svg'} alt='coach'/>
+                    <div className={s.bluesquare}/>
                 </div>
-            </div>
-            <div className={s.bluesquare}/>
+                
+                </div>    
+            
+            
         </div>
     )
 }
