@@ -1,54 +1,53 @@
 @import '../../styles/global.scss';
 .Card {
     width: 100%;
-    display: flex;
-    padding-left: 20px;
+    display: none;
+    padding:15px;
     box-shadow: 0px 2px 4px 0px #00000012;
-    margin-top: 22px;
-    margin-bottom: 23px;
+    position:relative;
     @include mobile {
-        display: none;
+        display: flex;
+        gap:8px;
+        flex-direction: column;
+    }
+    .amount {
+        border: 1px solid #E6E6E6;
+        border-radius: 7px;
+        padding:4px 10px;
     }
     .img_container {
         display: flex;
         align-items: center;
     }
     img {
-        width: 100px;
-        height: 75px;
+        width: 67px;
+        height: 50px;
     }
-    .description {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin-top: 25px;
-        margin-bottom: 42px;
-        margin-left: 40px;
-        width: 100%;
-
+   
+.MOBILE {
+    display: flex;
+    gap: 15px;
+}
             .maininfo {
                 display: flex;
-                justify-content: space-between;
+                flex-direction: column;
+                gap:8px;
+                justify-content: center;
                 h2 {
-                    font-size: 16px;
-                    font-weight: 500;
+                    font-size: 12px;
+                    font-weight: 400;
                 }
                 .price {
-                    margin-right: 20px;
+                    
                     display: flex;
-                    gap: 17px;
+                    align-items: center;
+                    gap: 10px;
                     p {
-                        font-size: 16px;
+                        font-size: 12px;
                         font-weight: 500;
                     }
-                    .discount {
-                        display: flex;
-                        gap: 7px;
-                    }
-                    img {
-                        width: 17px;
-                        height: 17px;
-                    }
+                  
+                  
                     .oldPrice {
                         color: #CCCCCC;
                         font-size: 12px;
@@ -64,12 +63,15 @@
                 }
               
             }
-    }
+    
     button {
         cursor: pointer;
-        height: 100%;
-        width: 57px;
+        
+       background: transparent;
         border: none;
+        position:absolute;
+        top:0;
+        right: 0;
         .cross {
             font-size: 15px;
             color: #C9C9C9;
