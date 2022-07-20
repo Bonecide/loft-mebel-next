@@ -22,7 +22,7 @@ export default function Layout({children,title , without , ...props}) {
                     {children}
                 </main>
               
-                {/* <Footer/> */}
+                <Footer/>
         
         </div>  
       </>
