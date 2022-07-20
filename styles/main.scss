@@ -49,6 +49,14 @@ p,h1,h2,h3,h4,h5 {
 }
 .slick-prev {
     z-index: 2;
+    @include mobile {
+        display:none !important;
+    }
+}
+.slick-next {
+    @include mobile {
+        display:none !important;
+    }
 }
 .container {
     width: 78%;

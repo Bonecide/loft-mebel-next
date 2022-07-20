@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import '../../../styles/global.scss';
 .Card {
     padding-top: 130px;
     padding-left: 120px;
-    width: 1140px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
     height: 450px;
+    @include mobile {
+        height: 126px;
+        width: 320px;
+        padding-top: 20px;
+        padding-left: 20px;
+    }
     
     div {
         h1 {
@@ -12,8 +21,9 @@
             font-size: 50px;
             font-weight: 700;
             color:#3C3C3C;
-            margin-block-start: 0em;
-            margin-block-end: 0em;
+            @include mobile {
+                font-size: 16px;
+            }
             
         }
         h3 {
@@ -21,6 +31,9 @@
             margin-top: 15px;
             color: #343434;
             font-family: 'Roboto Condensed', sans-serif;
+            @include mobile {
+                font-size: 10px;
+            }
         }
         
     }
@@ -35,5 +48,10 @@
         margin-top: 20px;
         cursor: pointer;
         color: #414141;
+        @include mobile {
+            padding: 7px 12px; 
+            font-size:10px;
+            margin-top: 10px;
+        }
     }
 }
