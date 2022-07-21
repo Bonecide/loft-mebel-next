@@ -1,3 +1,4 @@
+@import '../../../styles/global.scss';
 .crumb {
     display:flex;
     gap:10px;
@@ -8,6 +9,15 @@
     }
     
 }
+.FullContainer {
+    @include mobile {
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap:15px;
+    }
+}
 .bonus {
     display: flex;
     flex-direction: column;
@@ -16,6 +26,11 @@
         display: flex;
         justify-content: space-between;
         margin-top: 40px;
+        @include mobile {
+            flex-direction: column;
+            gap:15px;
+            margin-top: 10px;
+        }
         h2 {
             font-size: 16px;
             font-weight: 400;
@@ -43,6 +58,13 @@
    
     padding: 16px 133px;
     background: #F8F8F8;
+    @include mobile {
+        flex-direction: column;
+        align-items:flex-start;
+        padding:0;
+        background:white;
+        gap:30px;
+    }
     div {
         display: flex;
         align-items: center;

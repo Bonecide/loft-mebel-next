@@ -4,6 +4,7 @@ import PersonalInfo from './../../../Module/PersonalInfo/PersonalInfo';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import MyPurchase from '../MyPurchase/MyPurchase';
+import MyPurchaseMobile from './../../../Module/MyPurchaseMobile/MyPurchaseMobile';
 
 export default function MainInfoAcc() {
     const info = useSelector((state) => state.personal.info);
@@ -15,6 +16,7 @@ export default function MainInfoAcc() {
             {isChange ? <PersonalInfo change={setIsChange}/> : <AccForm change={setIsChange}/> }
             
             <MyPurchase/>
+            <MyPurchaseMobile/>
         </div>
     )
 }

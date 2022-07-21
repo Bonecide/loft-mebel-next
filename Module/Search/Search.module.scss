@@ -21,10 +21,13 @@
     }
     .wrap {
         position: absolute;
-        z-index : 999999;
+        z-index : 999;
         background:white ;
         max-height: 50vh;
         overflow-y: scroll;
+        @include mobile {
+            width:100%;
+        }
        .card {
         padding: 15px 0px 15px 20px;
         width:280px;

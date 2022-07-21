@@ -1,6 +1,10 @@
+@import '../../../styles/global.scss';
 .container {
     width:50%;
     margin-top: 42px;
+    @include mobile {
+        display: none;
+    }
     h2 {
         font-size: 16px;
         font-weight: 400;

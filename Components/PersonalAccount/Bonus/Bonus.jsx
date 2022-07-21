@@ -6,7 +6,7 @@ export default function Bonus() {
 
     return(
 
-        <div className='container'>
+        <div className={`container ${s.FullContainer}`}>
             <div className={s.crumb}>
                 <Link href={'/'}>
                     <a>Главная</a>
