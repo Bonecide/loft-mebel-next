@@ -35,11 +35,12 @@
         margin-top: 34px;
         p {
             font-size: 14px;
-            color: #414141;
-        }
-        .discount {
             color: #D74444;
+            cursor:pointer;
         }
+        // .discount {
+        //     color: #D74444;
+        // }
     }
     .second_column {
         display: flex;
@@ -94,10 +95,15 @@
             }
             
         }
+        .top {
+            p {
+                color:#D74444;
+            }
+        }
         .mobile_contacts {
             margin-top: 12px;
             display:flex;
-            align-items: flex-end;
+            
             width:100%;
             flex-direction:column;
             gap:12px;
@@ -109,6 +115,7 @@
             div {
                 display:flex;
                 gap:5px;
+                justify-content:space-between;
                 align-items:center;
                 p {
                     font-size:10px;

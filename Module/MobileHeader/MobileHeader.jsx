@@ -51,7 +51,7 @@ export default function MobileHeader() {
                         </Link>
                     </div>
             </div>
-            <div>
+            <div className={s.search}>
             <Search value={value} setValue={setValue}/>
             </div>
             <div className={s.categoryContainer}>

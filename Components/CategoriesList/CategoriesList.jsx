@@ -15,36 +15,36 @@ export default function CategoriesList() {
                 <div className={s.Card}>
                     <p>Акция</p>
                 </div>
-                <div className={s.etc}>
-                    <p onClick={()=> setIsView(!isView)}>⋮</p>
+                    {/* <div className={s.etc}>
+                        <p onClick={()=> setIsView(!isView)}>⋮</p>
+                    
+                    {isView &&  
+                <div className={s.menu_list} onMouseEnter={()=> setIsView(true)} onMouseLeave={()=> setIsView(false)}>
                 
-                {isView &&  
-            <div className={s.menu_list} onMouseEnter={()=> setIsView(true)} onMouseLeave={()=> setIsView(false)}>
-               
-                <div>
-                    <p>
-                        Новинки
-                    </p>
+                    <div>
+                        <p>
+                            Новинки
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Шкафы
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Матрасы
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Мягкая мебель
+                        </p>
+                    </div>
+                
                 </div>
-                <div>
-                    <p>
-                        Шкафы
-                    </p>
-                </div>
-                <div>
-                    <p>
-                        Матрасы
-                    </p>
-                </div>
-                <div>
-                    <p>
-                        Мягкая мебель
-                    </p>
-                </div>
-              
-            </div>
-            }
-            </div>
+                }
+                </div> */}
             </div>
         </div>
     )

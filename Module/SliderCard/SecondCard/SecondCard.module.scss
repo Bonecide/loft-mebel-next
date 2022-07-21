@@ -9,7 +9,7 @@
     height: 65vh;
     @include mobile {
         background-repeat: no-repeat;
-        height: 126px;
+        height: 145px;
         
         padding-top: 20px;
         padding-left: 20px;
@@ -52,8 +52,8 @@
         color: #414141;
         @include mobile {
             padding: 7px 12px; 
-            font-size:10px;
-            margin-top: 10px;
+            font-size:7px;
+            margin-top: 15px;
         }
     }
 }

@@ -57,12 +57,7 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div className={s.special}>
-                        <p className={s.discount}>
-                            Акция
-                        </p>
-                        <p>
-                            Новинки
-                        </p>
+                      <p onClick ={() => scrollTo(0,0)}>Вверх</p>
                     </div>
                 </div>
                 <div className={s.second_column}>
@@ -101,8 +96,13 @@ export default function Footer() {
                     </div>
                     <div className={s.mobile_contacts}>
                             <div className={s.phone_mobile}>
-                                <IMG src={'/img/icons/phone.svg'}/>
+                            <div className={s.top}><p onClick={()=> scrollTo(0,0)}>Вверх</p></div>
+                               <div>
+                                    <IMG src={'/img/icons/phone.svg'}/>
+                              
                                 <p>8 (964) 89 99 119</p>
+                                </div>  
+                                
                             </div>
 
                             <div className ={s.mail_inst}>

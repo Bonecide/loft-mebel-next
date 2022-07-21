@@ -19,6 +19,7 @@ export default function Header({without}) {
     },[item])
     return(
         <header onClick={()=> setValue(null)} className={`container ${s.container}`}>
+           <div className={s.fixed}>
             <div className={s.header}>
                     <div>
                         <Link href = {'/'}>
@@ -63,7 +64,9 @@ export default function Header({without}) {
                     </div>
                     
             </div>
+            </div>
             {!without && <CategoriesList />}
+            
         </header>
     )
 }
