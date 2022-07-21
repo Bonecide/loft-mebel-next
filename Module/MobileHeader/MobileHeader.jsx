@@ -93,7 +93,15 @@ export default function MobileHeader() {
                             <h3>Категории</h3>
                             <div className={s.Burger_container}>
                                 {CardInfo.map((info,idx) => (
-                                    <div className={s.BurgerCard} key={`burgerCategoryN${idx}`}>
+                                    <div onClick={() => {
+                                        router.push({
+                                            pathname: '/catalog',
+                                            query : {
+                                                title : info.type ,
+                                                
+                                            }
+                                        })
+                                    }} className={s.BurgerCard} key={`burgerCategoryN${idx}`}>
                                         <IMG src={info.img}/>
                                         <p>{info.type}</p>
                                     </div>    

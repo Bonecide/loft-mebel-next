@@ -9,7 +9,7 @@ import types from '../../fake-data/furniture-type.json'
 import {  Slider } from '@mui/material';
 import IMG from './../../Components/IMG/IMG';
 import item from '../../fake-data/catalog.json'
-
+import CloseIcon from '@mui/icons-material/Close';
 
 
 
@@ -34,14 +34,7 @@ export default function Catalog() {
       };
    
     const timly = []
-    // useEffect(()=> {
-    //     if(type) {
-    //         setPricefilter()
-    //     }
-    //     else if(category) {
-    //         setPricefilter()
-    //     }
-    // },[])
+    console.log(router.query)
     useEffect(() => {
         setPricefilter(item.filter((i) => i.tags.includes(type)))
     },[type])
@@ -138,12 +131,23 @@ export default function Catalog() {
        
     }
    },[sort])
-    
- 
+    const [mobileFilters,setMobileFilters] = useState(false)
+   const OpenMobileFilters = ()=> {
+    setMobileFilters(true)
+   }
+   const CloseMobileFilters = ()=> {
+    setMobileFilters(false)
+   }
+   const ToggleSort = () => {
+    setOpen(!open)
+   }
+   const CloseSort = () => {
+    setOpen(false)
+   }
     return(
         <Layout title={'Каталог'}>
             <div className={`${s.catalog} container`}>
-                <div onClick ={()=> setOpen(false)} className={s.filters}>
+                <div onClick ={CloseSort} className={s.filters}>
                     <div>
                         <h2>Раздел</h2>
                         <div className={s.selects}>
@@ -194,12 +198,18 @@ export default function Catalog() {
                             
                 </div>
                 <div  className ={s.goodsList}>
-                    <div onClick ={()=> setOpen(!open)}  className={s.sort}>
+                  <div className={s.sortContainer}>  
+                    <div onClick ={ToggleSort}  className={s.sort}>
                         <p>{sort}</p>
                         <IMG src={'/img/icons/sort.svg'}/>
                        
                     </div>
-                    <div onClick ={()=> setOpen(false)} className={s.parent}>  
+                    <div className={s.mobileFilterButton}>
+                        <button onClick={OpenMobileFilters}>Фильтр</button>
+                    </div>    
+                  </div>  
+                    
+                    <div onClick ={CloseSort} className={s.parent}>  
                         {open && 
                             <div className={s.absolute}>
                                 {filter.map((info,idx) => (
@@ -210,7 +220,7 @@ export default function Catalog() {
                             </div>    
                             }
                     </div>    
-                    <div onClick ={()=> setOpen(false)} className={s.container}>
+                    <div onClick ={CloseSort} className={s.container}>
                     {goods && goods.map((info,idx) => (
                         <HitsCard
                         onClick = {() => router.push(`/catalog/item/${info.name}`)}
@@ -229,6 +239,63 @@ export default function Catalog() {
                   </div>  
                 </div>
             </div>
+            {mobileFilters &&<div>
+            <div className={s.mobileFiltersContainer}  onClick ={CloseSort} >
+                    <div className={s.mobileFiltersTitle}>
+                        <p>Фильтр</p>
+                        <CloseIcon onClick ={CloseMobileFilters} className={s.closeIcon}/>
+                    </div>    
+                    <div className={s.mobileFilters}>
+                        <h2>Раздел</h2>
+                        <div className={s.selects}>
+                            <select value={type}  onChange={(e)=> setType(e.target.value)} >
+                                <option value={null}>Выберите Раздел</option>
+                                {types.map((info,idx) => (
+
+                                    <option key={`TypeOfFurniture${idx}`}>
+                                        {info.type}
+                                    </option>
+                                ))}
+
+                                
+                            </select>
+                            <select value={category} onChange={(e) => setCategory(e.target.value)}>
+                                <option>Выберите Категорию</option>
+                                {categories.length && categories[0].categories.map((info,idx) => (
+                                    <option key={`categoriesMN${idx}`}>
+                                        {info}
+                                    </option>
+                                ))}
+                            </select>
+                            
+                        </div>
+                     </div>
+                     <div className={s.MobilePrice}>
+                        <h2>Цена</h2>
+                        
+                        <div>
+                            <Slider
+                            max={30}
+                            value={price}
+                            onChange={handleChange}
+                            valueLabelDisplay="off"
+                            
+                            />
+                        <div className={s.price_container}>  
+                            <div>
+                                <p>{price[0] * 1000}</p>
+                            </div>
+                                 <hr/>
+                            <div>
+                                <p>{price[1] * 1000}</p>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                            
+                </div>
+            </div>}
         </Layout>
     )
 }
