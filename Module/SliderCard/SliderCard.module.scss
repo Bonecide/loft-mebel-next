@@ -13,6 +13,11 @@
         padding-top: 20px;
         padding-left: 20px;
     }
+    @include tablet {
+        background-repeat: no-repeat;
+        padding-top:85px;
+        padding-left: 60px;
+    }
     
     div {
         h1 {
@@ -22,6 +27,9 @@
             color:#3C3C3C;
             @include mobile {
                 font-size: 16px;
+            }
+            @include tablet {
+                font-size:29px;
             }
             
         }
@@ -33,6 +41,9 @@
             @include mobile {
                 font-size: 10px;
                 margin-top: 5px;
+            }
+            @include tablet {
+                font-size:12px;
             }
         }
         

@@ -5,6 +5,7 @@ import CategoriesList from './../../Components/CategoriesList/CategoriesList';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import Search from "../Search/Search";
+import BurgerMenu from "../MobileHeader/BurgerMenu/BurgerMenu";
 export default function Header({without}) {
     const item = useSelector((state) => state.basket);
     const [isFully,setIsFully] = useState(false)
@@ -17,14 +18,17 @@ export default function Header({without}) {
             setIsFully(false)
         }
     },[item])
+    const [open,setOpen] = useState(false)
     return(
         <header onClick={()=> setValue(null)} className={`container ${s.container}`}>
            <div className={s.fixed}>
             <div className={s.header}>
-                    <div>
+                    <div className = {s.burger_and_logo}>
+                        <Image  width={0} height={0} layout="raw"  onClick={() => setOpen(true)} className={s.burger} src={'/img/icons/menu-icon.svg'} alt={'burger'}/>
                         <Link href = {'/'}>
                         <Image height={25} className={s.logo} width= {113} src={'/img/LOGO.svg'} layout="raw" alt= 'logo'/>
                         </Link>
+                        
                     </div>
                     <div className={s.navigation}>
                         <Link href = {'/'} >Главная</Link>
@@ -66,7 +70,7 @@ export default function Header({without}) {
             </div>
             </div>
             {!without && <CategoriesList />}
-            
+            { open && <BurgerMenu setOpen={setOpen}/>}
         </header>
     )
 }

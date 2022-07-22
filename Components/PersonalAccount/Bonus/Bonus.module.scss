@@ -65,6 +65,9 @@
         background:white;
         gap:30px;
     }
+    @include tablet {
+        padding: 16px 50px;
+    }
     div {
         display: flex;
         align-items: center;
@@ -75,6 +78,9 @@
         }
         p {
             font-size: 14px;
+            @include tablet {
+                font-size : 10px;
+            }
         }
     }
 }

@@ -5,6 +5,9 @@
     @include mobile {
         display: none;
     }
+    @include tablet {
+        width:59%;
+    }
     h2 {
         font-size: 16px;
         font-weight: 400;
@@ -13,6 +16,9 @@
         display: flex;
         flex-direction: column;
         margin-top: 49px;
+        @include tablet {
+            margin-top:25px;
+        }
         .head {
             display: flex;
             .good {

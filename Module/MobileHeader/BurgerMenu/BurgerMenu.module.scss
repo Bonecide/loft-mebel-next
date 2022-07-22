@@ -1,0 +1,88 @@
+@import '../../../styles/global.scss';
+.burger_menu {
+    height:100vh;
+    position:absolute;
+    width:220px;
+    top:0;
+    left:0;
+    background:#F9F9F9;
+    overflow-y:scroll;
+    z-index: 9999;
+    display:none;
+    @include mobile {
+        display:block;
+
+    }
+    @include tablet{
+        display:block;
+        position:fixed;
+    }
+    h3 {
+        font-size: 13px;
+
+    }
+    .burger_title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 21px;
+        padding-left: 25px;
+        padding-right: 15px;
+        div {
+            width:18px;
+            height:18px;
+            background: #F0F0F0;
+            border-radius: 50%;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            
+            .close_icon {
+                    color:#BFBFBF;
+                   width: 13px;
+                   height: 13px;
+            }
+        }
+    }
+    .burger_info {
+        display: flex;
+        flex-direction: column;
+        
+        div {
+            display:flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 25px;
+            .icon {
+                color:#686868;
+            }
+            p {
+                font-size:13px;
+            }
+        }
+    }
+    .categories {
+        padding-left: 25px;
+        margin-top: 20px;
+    }
+    .Burger_container {
+        margin-top:35px;
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+        .BurgerCard {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            display:flex;
+            align-items:center;
+            gap:20px;
+            p {
+                font-size:13px;
+            }
+            img {
+                width:20px;
+                height:20px;
+            }
+        }
+    }
+}

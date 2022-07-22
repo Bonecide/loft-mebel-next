@@ -83,6 +83,9 @@
                     flex-direction: row;
                     gap: 10px;
                     width: 50%;
+                    @include tablet {
+                        width:60%;
+                    }
                     div {
                         box-shadow: none;
                         width:50%;

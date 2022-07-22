@@ -53,9 +53,15 @@ p,h1,h2,h3,h4,h5 {
     @include mobile {
         display:none !important;
     }
+    @include tablet {
+        display:none !important;
+    }
 }
 .slick-next {
     @include mobile {
+        display:none !important;
+    }
+    @include tablet {
         display:none !important;
     }
 }
@@ -64,6 +70,9 @@ p,h1,h2,h3,h4,h5 {
     margin: 0 auto ;
     @include mobile {
         width:95%;
+    }
+    @include tablet {
+        width:90%;
     }
 }
 .MuiSlider-colorPrimary {

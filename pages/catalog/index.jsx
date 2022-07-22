@@ -21,7 +21,7 @@ export default function Catalog() {
     const trueCategories = []
     const[open,setOpen] = useState(false)
     const [goods,setGoods] = useState(router.query.title ? item.filter((i) => i.tags.includes(type)) : (router.query.category ? copy.filter((i) => i.tags.includes(type)  && i.tags.includes(category) ): copy ) )
-    const [Pricefilter,setPricefilter] = useState(copy)
+    const [Pricefilter,setPricefilter] = useState(router.query.title ? copy.filter((i) => i.tags.includes(type)) : (router.query.category ? copy.filter((i) => i.tags.includes(type)  && i.tags.includes(category) ): copy ))
     const [type,setType] = useState(router.query.title )
     const[category,setCategory] = useState(router.query.category)
     const[categories,setCategories] = useState([])
@@ -36,7 +36,7 @@ export default function Catalog() {
     const timly = []
     console.log(router.query)
     useEffect(() => {
-        setPricefilter(item.filter((i) => i.tags.includes(type)))
+        setPricefilter(copy.filter((i) => i.tags.includes(type)))
     },[type])
     useEffect(() => {
         setPricefilter(copy.filter((i) => i.tags.includes(type)  && i.tags.includes(category)))
@@ -63,7 +63,7 @@ export default function Catalog() {
         setGoods(sortbyId(timly))
        }
 
-    else  setGoods(timly)
+        else  setGoods(timly)
         
    },[price])
    useEffect(()=> {
@@ -130,6 +130,7 @@ export default function Catalog() {
         setvalue(4123)
        
     }
+   
    },[sort])
     const [mobileFilters,setMobileFilters] = useState(false)
    const OpenMobileFilters = ()=> {

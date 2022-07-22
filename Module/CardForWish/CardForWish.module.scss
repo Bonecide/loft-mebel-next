@@ -1,7 +1,12 @@
+@import '../../styles/global.scss';
 .relative {
     position: relative;
     height: 378px;
     width: 263px;
+    @include mobile {
+        width:137px;
+        height:169px;
+    }
    
 }
 .Card {
@@ -11,7 +16,11 @@
    overflow: hidden;
    transition: all 0.5s;
    background: white;
-   
+   @include mobile {
+    width:137px;
+    height:169px;
+    padding:10px;
+   }
     &:hover  {
         .hidden {
             opacity: 1;
@@ -20,9 +29,12 @@
        
         height: 510px ;
          box-shadow: 0px 1px 9px 0px #0000001C;
-         z-index: 9999;
+         z-index: 3;
          position: absolute;
          top: 0;
+         @include mobile {
+            height:269px;
+         }
 
     }
     .icon_container {
@@ -39,10 +51,19 @@
         .discount {
             display: flex;
             gap: 7px;
+            p {
+                font-size: 13px;
+            }
+            @include mobile {
+                gap:5px;
+            }
             img {
-                width: 17px;
-                height: 17px;
+                width: 14px;
+                height: 14px;
                 margin-top: 0;
+                @include mobile {
+                    gap:5px;
+                }
             }
         }
     }
@@ -51,26 +72,48 @@
         width: 200px;
         height: 150px;
         margin-top: 38px;
+        @include mobile {
+            width:94px;
+            height:71px;
+            margin-top: 13px;
+        }
     }
    
     .info {
         margin-top: 55px;
+        @include mobile {
+            margin-top: 0px;
+        }
         h2 {
             font-weight: 500;
             font-size: 16px;
+            @include mobile {
+                font-size: 11px;
+            }
         }
         h3 {
             font-size: 11px;
             font-weight: 400;
             margin-top: 6px;
+            @include mobile {
+                font-size:10px;
+                margin-top:3px;
+            }
         }
         h4 {
             font-size: 16px;
             font-weight: 500;
             margin-top: 9px;
+            @include mobile {
+                font-size:13px;
+                margin-top:4px;
+            }
         }
         p {
             font-size: 12px;
+            @include mobile {
+                font-size:8px;
+            }
         }
         .prices {
             display:flex;
@@ -80,6 +123,9 @@
                 color:#CCCCCC;
                 text-decoration-line: line-through;
                 font-weight: 500;
+                @include mobile {
+                    font-size:10px;
+                }
             }
             
         }
@@ -88,21 +134,39 @@
         display: flex;
         gap: 37px;
         margin-top: 8px;
+        @include mobile {
+            
+            gap:10px;
+        }
             div {
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
+                @include mobile {
+                    gap: 4px;
+                }
                 p {
                     font-size: 9px;
+                    @include mobile {
+                        font-size: 8px;
+                    }
+                    
                 }
                 .type_size {
                     color: #C4C4C4;
                     font-size: 9px;
+                    @include mobile {
+                        font-size: 8px;
+                    }
                 }
             }
     }
     .size_text {
         margin-top: 15px;
+        @include mobile {
+            margin-top: 8px;
+            font-size: 10px;
+        }
     }
     .hidden {
         opacity: 0;
@@ -117,6 +181,11 @@
             color: white;
             margin-top: 17px;
             cursor: pointer;
+            @include mobile {
+                font-size: 10px;
+                padding: 6px 10px;
+                margin-top: 8px;
+            }
         }
     }
 }

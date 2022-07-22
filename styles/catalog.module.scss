@@ -5,6 +5,9 @@
    
     flex-wrap: wrap;
     gap: 30px;
+    @include tablet {
+        gap:10px;
+    }
 }
 .catalog {
     align-items: flex-start;
@@ -35,7 +38,9 @@
             width:250px;
             background : #F8F8F8;
             border:none;
-           
+           @include tablet {
+            width:100%;
+           }
         }
     }
     .price {

@@ -1,4 +1,4 @@
-
+@import '../../styles/global.scss';
 .container {
     
     .crumb {
@@ -17,9 +17,17 @@
         gap:30px;
         justify-content:center;
         flex-wrap: wrap;
+        @include mobile {
+            justify-content: flex-start;
+        } 
         span {
             cursor:pointer;
             color:blue;
+        }
+        h3 {
+            @include mobile {
+                font-size:12px;
+            }
         }
     }
     

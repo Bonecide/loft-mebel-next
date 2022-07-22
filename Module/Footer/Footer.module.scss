@@ -63,6 +63,9 @@
         display: flex;
         gap: 30px;
         margin-top: 34px;
+        @include tablet {
+            white-space: nowrap;
+        }
         img {
             width: 15px;
             height: 15px;

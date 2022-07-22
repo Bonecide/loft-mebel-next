@@ -6,14 +6,35 @@
     box-shadow: 0px 2px 4px 0px #00000012;
     padding: 25px;
     // padding-left:0;
-    width:100%;
+    // width:100%;
     gap:25px;
     z-index: 9999;
-    
+    @include tablet {
+        gap:0px;
+        justify-content:space-around;
+        
+    }
     background: rgba(255, 255, 255, 0.7);
     top:0;
     .logo {
         cursor:pointer;
+        @include tablet {
+            width:113px;
+            height:25px;
+        }
+    }
+}
+.burger_and_logo {
+    display :flex;
+    gap:25px;
+    align-items:center;
+    .burger {
+        display:none;
+        width:20px;
+        height:11px;
+        @include tablet {
+            display:block
+        }
     }
 }
 .container {
@@ -24,9 +45,18 @@
     @include mobile {
         display: none;
     }
+   
     .fixed {
         position: fixed;
-        z-index:9999
+        z-index:9999;
+        width: 78%;
+        margin: 0 auto ;
+        @include mobile {
+            width:95%;
+        }
+        @include tablet {
+            width:90%;
+        }
     }
 }
 
@@ -36,6 +66,9 @@
     a {
         font-size: 14px;
         color: #414141;
+    }
+    @include tablet {
+        display:none;
     }
 }
 .info_wrapper {
@@ -49,6 +82,9 @@
         width: 20px;
         height: 20px;
     }
+    @include tablet {
+        display:none;
+    }
 }
 .delivery {
     display: flex;
@@ -57,6 +93,11 @@
     img {
         width: 29px;
         height: 17px;
+    }
+    p {
+        @include tablet {
+            font-size:12px;
+        }
     }
 }
 .icons {
@@ -68,6 +109,9 @@
     img {
         width: 20px;
         height: 20px;
+    }
+    @include tablet {
+        gap:20px;
     }
 }
 .redcircle {

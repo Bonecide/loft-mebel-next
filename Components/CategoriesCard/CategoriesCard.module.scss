@@ -30,7 +30,9 @@
     position: absolute;
     z-index: 9999;
     background-color: white;
-   
+    overflow-y:scroll;
+    height:69vh;
+    &::-webkit-scrollbar { width: 0; }
     div {
         padding: 25px;
         display: flex;
