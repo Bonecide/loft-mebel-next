@@ -12,7 +12,9 @@ export default function CategoriesList() {
                 {CardInfo.map((info,idx) => (
                     <CategoriesCard  title={info.type} categories={info.categories} img={info.img} key={`CardN${idx}`}/>
                 ))}
-                
+                <div className={s.Card}>
+                    <p>Акция</p>
+                </div>
                     {/* <div className={s.etc}>
                         <p onClick={()=> setIsView(!isView)}>⋮</p>
                     
