@@ -5,7 +5,6 @@ import CategoriesList from './../../Components/CategoriesList/CategoriesList';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import Search from "../Search/Search";
-import BurgerMenu from "../MobileHeader/BurgerMenu/BurgerMenu";
 export default function Header({without}) {
     const item = useSelector((state) => state.basket);
     const [isFully,setIsFully] = useState(false)
@@ -32,8 +31,8 @@ export default function Header({without}) {
                     </div>
                     <div className={s.navigation}>
                         <Link href = {'/'} >Главная</Link>
-                        <Link href = {'/aboutUs'} >О нас</Link>
-                        <Link href = {'/contacts'} >Контакты</Link>
+                        <Link href = {'/'} >О нас</Link>
+                        <Link href = {'/'} >Контакты</Link>
                     </div>
                     <div>
                         <Search value={value} setValue={setValue}/>
@@ -49,7 +48,7 @@ export default function Header({without}) {
                         </div>
                     </div>
                     <div className={s.icons}>
-                        <Link href="/wishlist">
+                        <Link href="/">
                             <a>
                                 <Image width={0} height={0} src={'/img/icons/wishlist-icon.svg'} alt='wishlist'/>
                             </a>
@@ -60,7 +59,7 @@ export default function Header({without}) {
                                 {isFully && <div className={s.redcircle}/>}
                             </a>
                         </Link>
-                        <Link href="/personalaccount">
+                        <Link href="/">
                             <a>
                                 <Image width={0} height={0} src={'/img/icons/profile-icon.svg'} alt='profile'/>
                             </a>
@@ -70,7 +69,6 @@ export default function Header({without}) {
             </div>
             </div>
             {!without && <CategoriesList />}
-            { open && <BurgerMenu setOpen={setOpen}/>}
         </header>
     )
 }

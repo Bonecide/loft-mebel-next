@@ -21,7 +21,7 @@ export default function Catalog() {
     const trueCategories = []
     const[open,setOpen] = useState(false)
     const [goods,setGoods] = useState(router.query.title ? item.filter((i) => i.tags.includes(type)) : (router.query.category ? copy.filter((i) => i.tags.includes(type)  && i.tags.includes(category) ): copy ) )
-    const [Pricefilter,setPricefilter] = useState(router.query.title ? copy.filter((i) => i.tags.includes(type)) : (router.query.category ? copy.filter((i) => i.tags.includes(type)  && i.tags.includes(category) ): copy ))
+
     const [type,setType] = useState(router.query.title )
     const[category,setCategory] = useState(router.query.category)
     const[categories,setCategories] = useState([])
@@ -35,37 +35,8 @@ export default function Catalog() {
    
     const timly = []
     console.log(router.query)
-    useEffect(() => {
-        setPricefilter(copy.filter((i) => i.tags.includes(type)))
-    },[type])
-    useEffect(() => {
-        setPricefilter(copy.filter((i) => i.tags.includes(type)  && i.tags.includes(category)))
-    },[category])
-    useEffect(() => {
-        setPricefilter(goods)
-    },[sort])
-   useEffect(()=> {
-    for (let i = 0; i < Pricefilter.length; i++) {
-        if (price && Pricefilter[i].newPrice > price[0] * 1000 &&  Pricefilter[i].newPrice < price[1] * 1000  ) {
+   
 
-            timly.push(Pricefilter[i])
-        }
-      
-        
-    }
-        if (sort === 'По возрастанию цены') {
-        setGoods(sortbyPrice(timly))
-       }
-       else if (sort === 'По убыванию цены') {
-        setGoods(sortbyPrice(timly).reverse())
-       }
-       else if (sort === 'По возрастанию цены') {
-        setGoods(sortbyId(timly))
-       }
-
-        else  setGoods(timly)
-        
-   },[price])
    useEffect(()=> {
     for (let i = 0; i < types.length; i++) {
         if (type && types[i].type === type ) {
@@ -132,13 +103,7 @@ export default function Catalog() {
     }
    
    },[sort])
-    const [mobileFilters,setMobileFilters] = useState(false)
-   const OpenMobileFilters = ()=> {
-    setMobileFilters(true)
-   }
-   const CloseMobileFilters = ()=> {
-    setMobileFilters(false)
-   }
+ 
    const ToggleSort = () => {
     setOpen(!open)
    }
@@ -174,28 +139,7 @@ export default function Catalog() {
                             
                         </div>
                      </div>
-                     <div className={s.price}>
-                        <h2>Цена</h2>
-                        <div>
-                            <Slider
-                            max={30}
-                            value={price}
-                            onChange={handleChange}
-                            valueLabelDisplay="off"
-                            
-                            />
-                        <div className={s.price_container}>  
-                            <div>
-                                <p>{price[0] * 1000}</p>
-                            </div>
-                                 <hr/>
-                            <div>
-                                <p>{price[1] * 1000}</p>
-                            </div>
-                            
-                        </div>
-                        </div>
-                    </div>
+                     
                             
                 </div>
                 <div  className ={s.goodsList}>
@@ -205,9 +149,7 @@ export default function Catalog() {
                         <IMG src={'/img/icons/sort.svg'}/>
                        
                     </div>
-                    <div className={s.mobileFilterButton}>
-                        <button onClick={OpenMobileFilters}>Фильтр</button>
-                    </div>    
+                   
                   </div>  
                     
                     <div onClick ={CloseSort} className={s.parent}>  
@@ -240,63 +182,7 @@ export default function Catalog() {
                   </div>  
                 </div>
             </div>
-            {mobileFilters &&<div>
-            <div className={s.mobileFiltersContainer}  onClick ={CloseSort} >
-                    <div className={s.mobileFiltersTitle}>
-                        <p>Фильтр</p>
-                        <CloseIcon onClick ={CloseMobileFilters} className={s.closeIcon}/>
-                    </div>    
-                    <div className={s.mobileFilters}>
-                        <h2>Раздел</h2>
-                        <div className={s.selects}>
-                            <select value={type}  onChange={(e)=> setType(e.target.value)} >
-                                <option value={null}>Выберите Раздел</option>
-                                {types.map((info,idx) => (
-
-                                    <option key={`TypeOfFurniture${idx}`}>
-                                        {info.type}
-                                    </option>
-                                ))}
-
-                                
-                            </select>
-                            <select value={category} onChange={(e) => setCategory(e.target.value)}>
-                                <option>Выберите Категорию</option>
-                                {categories.length && categories[0].categories.map((info,idx) => (
-                                    <option key={`categoriesMN${idx}`}>
-                                        {info}
-                                    </option>
-                                ))}
-                            </select>
-                            
-                        </div>
-                     </div>
-                     <div className={s.MobilePrice}>
-                        <h2>Цена</h2>
-                        
-                        <div>
-                            <Slider
-                            max={30}
-                            value={price}
-                            onChange={handleChange}
-                            valueLabelDisplay="off"
-                            
-                            />
-                        <div className={s.price_container}>  
-                            <div>
-                                <p>{price[0] * 1000}</p>
-                            </div>
-                                 <hr/>
-                            <div>
-                                <p>{price[1] * 1000}</p>
-                            </div>
-                            
-                        </div>
-                        </div>
-                    </div>
-                            
-                </div>
-            </div>}
+           
         </Layout>
     )
 }

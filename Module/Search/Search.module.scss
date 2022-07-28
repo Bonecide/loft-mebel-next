@@ -12,9 +12,7 @@
         &:focus-visible {
             outline: none;
         }
-        @include mobile {
-            width:100%;
-        }
+       
     }
     .parent {
         position: relative;
@@ -25,9 +23,7 @@
         background:white ;
         max-height: 50vh;
         overflow-y: scroll;
-        @include mobile {
-            width:100%;
-        }
+        
        .card {
         padding: 15px 0px 15px 20px;
         width:280px;
@@ -37,14 +33,10 @@
         gap:20px;
         transition: all 0.3s;
         h3 {
-            @include mobile {
-                font-size: 18px;
-            }
+            
         }
         p {
-            @include mobile {
-                font-size: 12px;
-            }
+            
         }
         img {
             width:50px;

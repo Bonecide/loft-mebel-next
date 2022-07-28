@@ -4,17 +4,12 @@
     display: flex;
     gap: 100px;
     align-items: flex-start ;
-    @include mobile {
-        flex-direction: column;
-        gap:25px;
-    }
+    
     .yourName {
         display: flex;
         gap: 10px;
         width: 100%;
-        @include mobile {
-            flex-direction: column;
-        }
+      
         div {
             display: flex;
             flex-direction: column;
@@ -65,9 +60,7 @@
         gap: 20px;
        
         }
-        @include mobile {
-            width:100%;
-        }
+        
     }
     .file {
         display:flex;
@@ -96,9 +89,7 @@
         flex-wrap: wrap;
         gap: 23px;
         width: 60%;
-        @include mobile {
-            width: 100%;
-        }
+       
         div {
             display: flex;
             gap: 10px;
@@ -113,9 +104,7 @@
         flex-direction: column;
         gap: 30px;
         width: 60%;
-        @include mobile {
-            width: 100%;
-        }
+       
         p {
             color: #414141;
         }

@@ -86,38 +86,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className={s.footer_mobile}>
-                    <div className={s.address_mobile}>
-                        <IMG className={s.logo_mobile} src={'/img/mini-logo.svg'} alt='logo' />
-                        <p>г. Анапа, Анапское шоссе,
-                        <br />
-                            30 Ж/К Черное море
-                        </p>
-                    </div>
-                    <div className={s.mobile_contacts}>
-                            <div className={s.phone_mobile}>
-                            <div className={s.top}><p onClick={()=> scrollTo(0,0)}>Вверх</p></div>
-                               <div>
-                                    <IMG src={'/img/icons/phone.svg'}/>
-                              
-                                <p>8 (964) 89 99 119</p>
-                                </div>  
-                                
-                            </div>
-
-                            <div className ={s.mail_inst}>
-
-                                <div>
-                                    <IMG src={'/img/icons/inst.svg'}/>
-                                    <p>INSTAGRAM</p>
-                                </div>
-                                    <div>
-                                        <IMG src={'/img/icons/mail.svg'}/>
-                                        <p>mebel_loft_anapa@mail.ru</p>
-                                    </div>    
-                            </div>    
-                    </div>
-                </div>
+               
         </footer>
     )
 }

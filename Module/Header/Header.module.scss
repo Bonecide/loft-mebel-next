@@ -9,19 +9,12 @@
     // width:100%;
     gap:25px;
     z-index: 9999;
-    @include tablet {
-        gap:0px;
-        justify-content:space-around;
-        
-    }
+   
     background: rgba(255, 255, 255, 0.7);
     top:0;
     .logo {
         cursor:pointer;
-        @include tablet {
-            width:113px;
-            height:25px;
-        }
+       
     }
 }
 .burger_and_logo {
@@ -32,9 +25,7 @@
         display:none;
         width:20px;
         height:11px;
-        @include tablet {
-            display:block
-        }
+        
     }
 }
 .container {
@@ -42,21 +33,14 @@
     // position: fixed;
     z-index: 9999;
     background:white;
-    @include mobile {
-        display: none;
-    }
+    
    
     .fixed {
         position: fixed;
         z-index:9999;
         width: 78%;
         margin: 0 auto ;
-        @include mobile {
-            width:95%;
-        }
-        @include tablet {
-            width:90%;
-        }
+      
     }
 }
 
@@ -67,9 +51,7 @@
         font-size: 14px;
         color: #414141;
     }
-    @include tablet {
-        display:none;
-    }
+    
 }
 .info_wrapper {
     display: flex;
@@ -82,9 +64,7 @@
         width: 20px;
         height: 20px;
     }
-    @include tablet {
-        display:none;
-    }
+    
 }
 .delivery {
     display: flex;
@@ -95,9 +75,7 @@
         height: 17px;
     }
     p {
-        @include tablet {
-            font-size:12px;
-        }
+        
     }
 }
 .icons {
@@ -110,9 +88,7 @@
         width: 20px;
         height: 20px;
     }
-    @include tablet {
-        gap:20px;
-    }
+   
 }
 .redcircle {
     width: 8px;

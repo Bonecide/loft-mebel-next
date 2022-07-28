@@ -6,7 +6,6 @@ import { Link } from 'next/link';
 import { addPurchase } from '../../store/Slices/purchaseSlice';
 import YouLikeIt from '../YouLikeIt/YouLikeIt';
 import { zeroing } from '../../store/Slices/priceSlice';
-import MobileBasketCard from './../../Module/MobileBasket/MobileBasket';
 export default function BasketList() {
     const dispatch = useDispatch()
     const price = useSelector((state) => state.price);
@@ -36,18 +35,7 @@ export default function BasketList() {
                     size={info.size}
                     key={`NjiKj${idx}`}/>
                 )) : null}
-               <div className ={s.mobile}>
-                 {item ? item.map((info,idx) => (
-                    <MobileBasketCard
-                    idx={idx} 
-                    oldPrice={info.oldPrice} 
-                    name={info.name}
-                    newPrice={info.newPrice}
-                    img={info.img} 
-                    size={info.size}
-                    key={`Njiasdjkdkd,caKj${idx}`}/>
-                )) : null}
-                </div> 
+               
                 <div className={s.order}>
                     <div>
                     <p>Итоговая стоимость:</p>

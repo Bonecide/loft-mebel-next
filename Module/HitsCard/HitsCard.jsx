@@ -28,10 +28,7 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,
         setModal(true)
 
     } 
-    const addInWish = ()=> {
-        dispatch(Addwish(info))
-        setWish(true)
-    }
+   
      
     return( 
 <>
@@ -48,7 +45,7 @@ export default function HitsCard({name,type,oldPrice,newPrice,discount,size,img,
 
                     </div>
                     }
-                    <FavoriteBorderIcon onClick = {addInWish} className={s.heart}/>
+                    <FavoriteBorderIcon className={s.heart}/>
                     
                 </div>
                 <div {...props}>

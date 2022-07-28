@@ -6,9 +6,7 @@
     justify-content: space-between;
     
     .navigation {
-        @include mobile {
-            display: none;
-        }
+       
     }
     h2 {
         font-size: 14px;
@@ -46,9 +44,7 @@
         display: flex;
         align-items: flex-end;
         flex-direction: column;
-        @include mobile {
-            display: none;
-        }
+        
         img {
             width: 60px;
             height: 49px;
@@ -63,9 +59,7 @@
         display: flex;
         gap: 30px;
         margin-top: 34px;
-        @include tablet {
-            white-space: nowrap;
-        }
+        
         img {
             width: 15px;
             height: 15px;
@@ -75,59 +69,5 @@
             gap: 7px;
         }
     }
-    .footer_mobile {
-        display:none;
-        flex-direction:column;
-        width:100%;
-        @include mobile {
-            display:flex;
-        }
-        .address_mobile {
-            display:flex;
-            width:100%;
-            align-items:center;
-            justify-content:space-between;
-            p {
-                text-align:end;
-                font-size:10px;
-            }
-            .logo_mobile {
-                width:50px;
-                height:50px;
-            
-            }
-            
-        }
-        .top {
-            p {
-                color:#D74444;
-            }
-        }
-        .mobile_contacts {
-            margin-top: 12px;
-            display:flex;
-            
-            width:100%;
-            flex-direction:column;
-            gap:12px;
-           .mail_inst {
-            display:flex;
-            justify-content:space-between;
-            width:100%;
-           }
-            div {
-                display:flex;
-                gap:5px;
-                justify-content:space-between;
-                align-items:center;
-                p {
-                    font-size:10px;
-                }
-                img {
-                    width:11px;
-                    height:11px;
-                }
-            }
-        }
-    }
+    
 }
