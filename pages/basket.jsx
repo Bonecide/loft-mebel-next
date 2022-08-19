@@ -15,7 +15,7 @@ export default function Basket() {
                 </Link>
             <p>/</p>
             <Link href={'/basket'}>
-               <a> Корзина </a>
+               <a> Корзна </a>
             </Link>
            </div>
                 <BasketList/>
